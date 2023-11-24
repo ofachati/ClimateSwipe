@@ -1,0 +1,36 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+  heroku: circleci/heroku@2.0.0
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:16.13
+    steps:
+      - checkout
+      - node/install-packages
+
+  deploy-to-heroku:
+    docker:
+      - image: cimg/node:16.13
+    steps:
+      - checkout
+      - heroku/install
+      - run:
+          name: Deploy to Heroku
+          command: |
+            git remote add heroku https://git.heroku.com/strangefront.git
+            git push heroku main
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build-and-test
+      - deploy-to-heroku:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: main
