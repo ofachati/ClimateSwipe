@@ -18,11 +18,10 @@ jobs:
     steps:
       - checkout
       - heroku/install
-      - run:
+       - run:
           name: Deploy to Heroku
           command: |
-            git remote add heroku https://git.heroku.com/strangefront.git
-            git push heroku main
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/strangeback.git main
 
 workflows:
   build-and-deploy:
