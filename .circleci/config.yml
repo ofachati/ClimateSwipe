@@ -18,7 +18,7 @@ jobs:
     steps:
       - checkout
       - heroku/install
-       - run:
+      - run:
           name: Deploy to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/strangeback.git main
