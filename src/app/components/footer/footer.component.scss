@@ -28,9 +28,7 @@
 }
 
 .round-picture {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 40%;
   margin-bottom: 10px;
 }
 
@@ -66,7 +64,23 @@
   }
 
   mat-icon {
-    font-size: 18px;
-    color: white; /* Set icon color to white */
+    font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   }
+}
+
+
+
+// this is the parent span angular inserts for icon inside mat-fab
+::ng-deep.mat-fab .mat-button-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+}
+// this is the parent span angular inserts for icon inside mat-fab
+::ng-deep.mat-fab .mat-button-wrapper {
+  display: flex !important;
+  justify-content: center !important;
 }
