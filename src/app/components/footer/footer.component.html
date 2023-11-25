@@ -1,17 +1,22 @@
 <!-- footer.component.html -->
 <div class="footer">
-    <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-list cols="6" >
       <!-- First Section -->
-      <mat-grid-tile>
+      <mat-grid-tile  colspan="2">
         <div class="section">
-        
-          <img  src="assets/logo-no-background.svg" alt="Team logo" matTooltip="Our Team" style="width: 80%;">
-
+          <a href="https://www.buymeacoffee.com/FACHATI" target="_blank">
+            <img
+              src="assets/logo-no-background.svg"
+              alt="Team logo"
+              matTooltip="Our Team"
+              style="width: 80%; cursor: default;"
+            />
+          </a>
         </div>
       </mat-grid-tile>
   
       <!-- Second Section -->
-      <mat-grid-tile>
+      <mat-grid-tile  colspan="2">
 
         <div class="section">
           <h3>About us</h3>
@@ -24,14 +29,16 @@
             Équipe INIT TO WIN IT
 
           </p>
+          <br>
+          <a href="https://www.buymeacoffee.com/FACHATI" target="_blank" target="_blank">Buy us a coffee ☕</a><br>
+          <a (click)="onButtonClick()" target="_blank">Terms and conditions (MUST READ)</a>
         </div>
         
       </mat-grid-tile>
   
       <!-- Third Section -->
-      <mat-grid-tile rowspan="1">
+      <mat-grid-tile colspan="1">
 
-        <div class="contact-section">
          <!-- <h3>Contactez nous</h3>-->
 
           <!-- First Subsection -->
@@ -47,9 +54,16 @@
                 <button mat-fab class="linkedin" matTooltip="Linkedin" style="color: white; font-size: large;">in</button>
                 <button mat-fab class="github" matTooltip="Github"> <mat-icon>code</mat-icon></button>
               </div>
-            </div>
           </div>
       
+    
+        </div>
+      </mat-grid-tile>
+      
+      <mat-grid-tile colspan="1">
+
+         <!-- <h3>Contactez nous</h3>-->
+          <!-- First Subsection -->
           <!-- Second Subsection -->
           <div class="round-picture" class="contact-subsection">
             <img  class="round-picture"  src="assets/omar-memogi.PNG" alt="Second Person" matTooltip="Momo">
@@ -64,9 +78,8 @@
               </div>
             </div>
           </div>
-        </div>
       </mat-grid-tile>
-      
+
     </mat-grid-list>
   </div>
   
