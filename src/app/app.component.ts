@@ -16,7 +16,6 @@ import { trigger, style, animate, transition } from '@angular/animations';
 })
 
 export class AppComponent{
-  title = 'nuit_info_front';
   showSinger: boolean = false;
 
   displayEasterEgg = false;

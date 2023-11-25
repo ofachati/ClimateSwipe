@@ -84,3 +84,23 @@
   display: flex !important;
   justify-content: center !important;
 }
+
+
+
+.section {
+  text-align: justify;
+}
+
+.section p {
+  text-align: left; /* Align the paragraph text to the left */
+}
+
+.section a {
+  color: #007bff; /* Change the link color to a preferred color */
+  text-decoration: none; /* Remove the underline from the links */
+  font-weight: bold; /* Make the links bold if desired */
+}
+
+.section a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
