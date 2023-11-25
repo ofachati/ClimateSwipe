@@ -1,3 +1,7 @@
+[![CircleCI](https://img.shields.io/circleci/build/github/ofachati/nuit_info_front/main)](https://dl.circleci.com/status-badge/redirect/gh/ofachati/nuit_info_front/tree/main)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ofachati/nuit_info_front)](https://codeclimate.com/github/ofachati/nuit_info_front/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886)](https://app.codacy.com/gh/ofachati/nuit_info_front/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 # NuitInfoFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
