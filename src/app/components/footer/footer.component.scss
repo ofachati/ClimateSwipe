@@ -1,0 +1,72 @@
+// footer.component.scss
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .section {
+    padding: 10px;
+  }
+  
+
+/* Add these styles to your existing styles in footer.component.scss */
+
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-subsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.round-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+
+
+.contact-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  button {
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Optional: Make the buttons circular */
+  }
+
+  /* Customize colors based on platform */
+  button.phone {
+    background-color: #34a853; /* Google Phone color */
+  }
+
+  button.mail {
+    background-color: #ea4335; /* Google Mail color */
+  }
+
+  button.linkedin {
+    background-color: #0077b5; /* LinkedIn color */
+  }
+
+  button.github {
+    background-color: #211f1f; /* GitHub color */
+  }
+
+  mat-icon {
+    font-size: 18px;
+    color: white; /* Set icon color to white */
+  }
+}

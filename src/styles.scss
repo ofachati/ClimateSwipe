@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css'; 
+
+
+@-webkit-keyframes roll {
+    from { -webkit-transform: rotate(0deg) }
+    to { -webkit-transform: rotate(360deg) }
+}
+
+@keyframes roll {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}
+
+.easter-egg {
+    -webkit-animation-name: roll;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: roll;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
