@@ -16,6 +16,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
+    DeveloperModeComponent,
   ],
   imports: [
     BrowserModule,
