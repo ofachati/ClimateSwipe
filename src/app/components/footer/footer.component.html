@@ -43,16 +43,16 @@
 
           <!-- First Subsection -->
           <div class="contact-subsection">
-            <img class="round-picture" src="assets/omar-memogi.PNG" alt="First Person" matTooltip="Omar"  (click)="onImageClick()">
+            <img class="round-picture" src="assets/omar-memogi.png" alt="First Person" matTooltip="Omar"  (click)="DeveloperMode()">
 
             <div class="contact-info">
               <p>Omar EL FACHATI</p>
               <br>
               <div class="contact-icons">
-                <button mat-fab class="phone" matTooltip="+33 763638534"> <mat-icon>phone</mat-icon></button>
-                <button mat-fab class="mail" matTooltip="email"> <mat-icon>mail</mat-icon></button>
-                <button mat-fab class="linkedin" matTooltip="Linkedin" style="color: white; font-size: large;">in</button>
-                <button mat-fab class="github" matTooltip="Github"> <mat-icon>code</mat-icon></button>
+                <button mat-fab class="phone" matTooltip="+33 763638534" onclick="window.open('tel:+33763638534')"> <mat-icon>phone</mat-icon></button>
+                <button mat-fab class="mail" matTooltip="email" onclick="window.open('mailto:elfachatiomar@gmail.com')"> <mat-icon>mail</mat-icon></button>
+                <button mat-fab class="linkedin" matTooltip="Linkedin" onclick="window.open('//www.linkedin.com/in/facahti', '_blank')" style="color: white; font-size: large;">in</button>
+                <button mat-fab class="github" matTooltip="Github" onclick="window.open('//github.com/ofachati', '_blank')"><mat-icon>code</mat-icon></button>
               </div>
           </div>
       
@@ -66,15 +66,17 @@
           <!-- First Subsection -->
           <!-- Second Subsection -->
           <div class="round-picture" class="contact-subsection">
-            <img  class="round-picture"  src="assets/omar-memogi.PNG" alt="Second Person" matTooltip="Momo">
+            <img  class="round-picture"  src="assets/mohamed-memogi.png" alt="Second Person" matTooltip="Momo"  (click)="DeveloperMode()">
             <div class="contact-info">
               <p>Mohamed KONATE</p>
               <br>
               <div class="contact-icons">
-                <button mat-fab class="phone" matTooltip="3ndo 3 dnmari"> <mat-icon>phone</mat-icon></button>
-                <button mat-fab class="mail" matTooltip="email"> <mat-icon>mail</mat-icon></button>
-                <button mat-fab class="linkedin" matTooltip="Linkedin" style="color: white; font-size: large;">in</button>
-                <button mat-fab class="github" matTooltip="Github"> <mat-icon>code</mat-icon></button>
+                <!-- Phone -->
+<button mat-fab class="phone" matTooltip="this guy has at least 3 numbers , good luck calling him" onclick="window.open('tel:+33763638534')"><mat-icon>phone</mat-icon></button>
+<button mat-fab class="mail" matTooltip="email" onclick="window.open('mailto:your.email@example.com')"> <mat-icon>mail</mat-icon></button>
+<button mat-fab class="linkedin" matTooltip="Linkedin" onclick="window.open('//www.linkedin.com/in/your-linkedin-profile', '_blank')" style="color: white; font-size: large;">in</button>
+<button mat-fab class="github" matTooltip="Github" onclick="window.open('//github.com/your-github-profile', '_blank')"><mat-icon>code</mat-icon></button>
+
               </div>
             </div>
           </div>

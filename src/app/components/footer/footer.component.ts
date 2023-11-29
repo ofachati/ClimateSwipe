@@ -19,9 +19,8 @@ export class FooterComponent {
     this.buttonClick.emit();
   }
 
-  onImageClick() {
+  DeveloperMode() {
     this.clickCount++;
-
     if (this.clickCount === 7) {
       this.showDeveloperModeSnackBar();
       this.openDeveloperModeDialog();
@@ -40,7 +39,6 @@ export class FooterComponent {
     this.dialog.open(DeveloperModeComponent, {
       width: '50%',
       height: '50%',
-      // Add any other dialog configuration options as needed
     });
   }
 

@@ -1,18 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,HostListener} from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('slideIn', [
-      transition(':enter', [
-        style({ transform: 'translateY(100%)' }),
-        animate('500ms ease-in', style({ transform: 'translateY(0%)' })),
-      ]),
-    ]),
-  ],
+
 })
 
 export class AppComponent{
@@ -33,7 +26,7 @@ export class AppComponent{
   }
 
   
-  triggerEasterEgg() {
+  triggerRickRoll() {
     const audioElement = document.getElementById('rickRollAudio') as HTMLAudioElement;
 
     // Play the music only if it's not already playing
@@ -52,6 +45,45 @@ export class AppComponent{
     }
   }
 
+  easterEggs: { code: string[]; action: () => void }[] = [
+    {
+      code: ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'],
+      action: () => this.triggerRickRoll(),
+    },
+    // Add more Easter eggs as needed
+  ];
+
+  enteredKeys: string[] = [];
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    // Check each defined Easter egg
+    this.easterEggs.forEach((egg) => this.checkEasterEgg(egg, event.key));
+  }
+
+  // Check an individual Easter egg
+  checkEasterEgg(easterEgg: { code: string[]; action: () => void }, key: string) {
+    const { code, action } = easterEgg;
+
+    // Keep track of the entered keys
+    this.enteredKeys.push(key);
+
+    // Check if the entered keys match the Easter egg code
+    if (this.arrayEquals(this.enteredKeys.slice(-code.length), code)) {
+      // Execute the Easter egg action
+      action();
+
+      // Reset the entered keys
+      this.enteredKeys = [];
+    }
+  }
+
+  // Helper function to compare arrays
+  arrayEquals(arr1: string[], arr2: string[]) {
+    return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
+  }
+
+ 
 
 }
 
