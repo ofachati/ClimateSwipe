@@ -1,4 +1,4 @@
-import { Component, OnInit ,HostListener} from '@angular/core';
+import { Component, OnInit ,HostListener, ChangeDetectorRef} from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -12,11 +12,15 @@ export class AppComponent{
   showSinger: boolean = false;
 
   barrelRoll = false;
+  constructor() {}
 
 
 
   onPress() {
       this.barrelRoll = !this.barrelRoll;
+      setTimeout(() => {
+        this.barrelRoll = !this.barrelRoll;
+      }, 3000); 
   }
 
   
