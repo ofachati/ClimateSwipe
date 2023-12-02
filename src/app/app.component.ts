@@ -11,18 +11,12 @@ import { trigger, style, animate, transition } from '@angular/animations';
 export class AppComponent{
   showSinger: boolean = false;
 
-  displayEasterEgg = false;
-  clickCount = 0;
-
+  barrelRoll = false;
 
 
 
   onPress() {
-    this.clickCount = ++this.clickCount;
-    if (this.clickCount == 6) {
-      this.displayEasterEgg = true;
-      this.clickCount = 0;
-    }
+      this.barrelRoll = !this.barrelRoll;
   }
 
   

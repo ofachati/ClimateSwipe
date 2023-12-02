@@ -1,4 +1,5 @@
-<div [class.easter-egg]="displayEasterEgg" (click)="onPress()">
+<br><br><br>
+<div [class.easter-egg]="barrelRoll">
   <audio id="rickRollAudio" src="assets/never-gonna-give-you-up.mp3" ></audio>
 
   <!-- Toolbar -->
@@ -28,9 +29,9 @@
   <div [@slideIn] *ngIf="showSinger" class="singer"></div>
 
 
-
+<app-header></app-header>
 
 <router-outlet></router-outlet>
-<app-footer (buttonClick)="triggerRickRoll()"></app-footer>
+<app-footer (buttonClick)="triggerRickRoll()" (backendClick)="onPress()"></app-footer>
 
 </div>

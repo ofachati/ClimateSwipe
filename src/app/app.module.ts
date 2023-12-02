@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
+import {TetrisCoreModule} from 'ngx-tetris';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { DeveloperModeComponent } from './components/developer-mode/developer-mo
     HeaderComponent,
     HomeComponent,
     DeveloperModeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { DeveloperModeComponent } from './components/developer-mode/developer-mo
     MatInputModule,
     MatTooltipModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TetrisCoreModule
 
   ],
   providers: [],

@@ -14,9 +14,14 @@ export class FooterComponent {
   constructor(public dialog: MatDialog, private snackBar: MatSnackBar) {}
 
   @Output() buttonClick: EventEmitter<void> = new EventEmitter<void>();
+  @Output() backendClick: EventEmitter<void> = new EventEmitter<void>();
 
   onButtonClick(): void {
     this.buttonClick.emit();
+  }
+
+  onBackendClick(): void {
+    this.backendClick.emit();
   }
 
   DeveloperMode() {

@@ -1,0 +1,55 @@
+:host {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+
+    mat-icon {
+      font-size: 24px;
+    }
+
+    button {
+      &.bw {
+        color: black;
+        background: white;
+        border: 2px solid black;
+      }
+      &.colors {
+        color: black;
+        background: yellow;
+        border: 2px solid red;
+        span {
+          font-weight: bold;
+          background: white;
+          color: black;
+          padding: 0 2px;
+          &.green {
+            background: green;
+            color: white;
+          }
+          &.red {
+            background: red;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+  }
+
+  mat-card {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .controls {
+    float: right;
+  }
+
+  tetris-core {
+    display: inline-block;
+  }
