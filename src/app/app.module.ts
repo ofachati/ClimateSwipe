@@ -19,6 +19,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 import {TetrisCoreModule} from 'ngx-tetris';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatTooltipModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    TetrisCoreModule
+    TetrisCoreModule,
+    MatToolbarModule
 
   ],
   providers: [],
