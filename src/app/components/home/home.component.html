@@ -1,8 +1,15 @@
-<div class="content" role="main">
-  
+<br><br><br><br>
+<div class="tbg">
 
-
+  <div class="tbgwrap">
+      <app-tinder-card  [parentSubject]="parentSubject">
+      </app-tinder-card>
+    <div class="tcontrols">
+      <div (click)='cardAnimation("swipeleft")'  class="tno"><i class="fa fa-times" aria-hidden="true"></i></div>
+      <div class="ti"><i class="fa fa-info" aria-hidden="true"></i></div>
+      <div (click)='cardAnimation("swiperight")' class="tyes"><i class="fa fa-heart" aria-hidden="true"></i></div>
+    </div>
   </div>
-
-
-
+  
+</div>
+<br><br><br>

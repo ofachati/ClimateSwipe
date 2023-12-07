@@ -17,6 +17,7 @@ export class AppComponent{
 
 
   onPress() {
+      console.log("pressed");
       this.barrelRoll = !this.barrelRoll;
       setTimeout(() => {
         this.barrelRoll = !this.barrelRoll;

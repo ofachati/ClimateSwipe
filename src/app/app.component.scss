@@ -1,5 +1,23 @@
 /* Add this to your component's CSS file */
 
+  
+@-webkit-keyframes roll {
+  from { -webkit-transform: rotate(0deg) }
+  to { -webkit-transform: rotate(360deg) }
+}
+
+@keyframes roll {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+body {
+  -webkit-animation-name: roll;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+}
+
+
 
 .singer {
     position: fixed;
@@ -39,6 +57,4 @@
   }
 
  
-  
 
-  
