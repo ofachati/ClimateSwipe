@@ -11,7 +11,17 @@ src="favicon.ico"    />
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>favorite</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="themeMenu">
+      <mat-icon>color_lens</mat-icon>
     </button>
+    
+  <mat-menu #themeMenu="matMenu">
+    <mat-radio-group aria-label="Select a theme" (change)="changeTheme($event.value)">
+      <mat-radio-button value="default">Default Theme</mat-radio-button>
+      <mat-radio-button value="dark">Dark Theme</mat-radio-button>
+      <mat-radio-button value="light">Light Theme</mat-radio-button>
+      <mat-radio-button value="christmas">Christmas Theme</mat-radio-button>
+    </mat-radio-group>
+  </mat-menu>
   </mat-toolbar>

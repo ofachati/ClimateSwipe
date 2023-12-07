@@ -1,3 +1,20 @@
+@use '@angular/material' as mat;
+
+@use '_dark-theme.scss' as darkTheme;
+@use '_light-theme.scss' as lightTheme;
+@use '_xmas-theme.scss' as xmasTheme;
+
+body.theme-dark {
+  @include mat.all-component-themes(darkTheme.$dark-theme);
+}
+
+body.theme-light {
+  @include mat.all-component-themes(lightTheme.$light-theme);
+}
+body.theme-christmas {
+  @include mat.all-component-themes(xmasTheme.$christmas-theme);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -7,6 +24,7 @@
 }
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css'; 
+
 
 
 @-webkit-keyframes roll {
@@ -19,14 +37,7 @@
     to { transform: rotate(360deg) }
 }
 
-.easter-egg {
-    -webkit-animation-name: roll;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: 1;
-    animation-name: roll;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-}
+
 
 
 h1 {

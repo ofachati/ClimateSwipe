@@ -7,5 +7,11 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
- 
+  changeTheme(theme: string): void {
+    document.body.className = '';
+    document.body.classList.add(`theme-${theme}`);
+  }
 }
+
+//    background-color: #333;
+//color: white;

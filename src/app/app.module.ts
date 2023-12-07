@@ -20,6 +20,8 @@ import { DeveloperModeComponent } from './components/developer-mode/developer-mo
 import {TetrisCoreModule} from 'ngx-tetris';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserAnimationsModule,
     MatSnackBarModule,
     TetrisCoreModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatRadioModule
 
   ],
   providers: [],
