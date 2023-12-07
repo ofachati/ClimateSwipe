@@ -22,6 +22,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
+import { TetrisComponent } from './components/tetris/tetris.component';
+import { TinderCardComponent } from './components/tinder-card/tinder-card.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { MatRadioModule } from '@angular/material/radio';
     HomeComponent,
     DeveloperModeComponent,
     NotFoundComponent,
+    TetrisComponent,
+    TinderCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,56 +14,8 @@
   </div>
   
   <br><br><br><br>
+  <app-tetris></app-tetris>
   
-  <tetris-core #game
-      tileSize="20px"
-      (lineCleared)="onLineCleared()"
-      (gameOver)="onGameOver()"></tetris-core>
-  
-      <table class="controls">
-        <tr>
-          <td><button mat-fab color="primary" (click)="game.actionStart()" matTooltip="Start">
-              <mat-icon>play_arrow</mat-icon>
-            </button></td>
-          <td><button mat-fab color="warn" (click)="game.actionStop()" matTooltip="Stop">
-              <mat-icon>stop</mat-icon>
-            </button></td>
-          <td><button mat-fab (click)="game.actionReset()" matTooltip="Reset">
-              <mat-icon>replay</mat-icon>
-            </button></td>
-          <td></td>
-        </tr>
-        <tr><td></td></tr>
-        <tr><td></td></tr>
-        <tr><td></td></tr>
-        <tr>
-          <td></td>
-          <td><button mat-fab color="accent" (click)="game.actionRotate()" matTooltip="Rotate">
-              <mat-icon>rotate_right</mat-icon>
-            </button></td>
-        </tr>
-        <tr>
-          <td><button mat-fab color="primary" (click)="game.actionLeft()" matTooltip="Left">
-              <mat-icon>keyboard_arrow_left</mat-icon>
-            </button></td>
-          <td></td>
-          <td><button mat-fab color="primary" (click)="game.actionRight()" matTooltip="Right">
-              <mat-icon>keyboard_arrow_right</mat-icon>
-            </button></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><button mat-fab color="primary" (click)="game.actionDown()" matTooltip="Down">
-              <mat-icon>keyboard_arrow_down</mat-icon>
-            </button></td>
-          <td><button mat-fab color="primary" (click)="game.actionDrop()" matTooltip="Drop">
-              <mat-icon>arrow_downward</mat-icon>
-            </button></td>
-        </tr>
-        <tr style="height: 20px">
-          <td></td>
-    
-      </table>
 
 
       
