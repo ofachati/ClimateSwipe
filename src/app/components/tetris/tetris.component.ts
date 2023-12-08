@@ -1,6 +1,6 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import {TetrisCoreComponent} from 'ngx-tetris';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-tetris',

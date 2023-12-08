@@ -1,5 +1,8 @@
 import { Component, OnInit ,HostListener, ChangeDetectorRef} from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +16,9 @@ export class AppComponent{
   showMission: boolean = false;
 
   barrelRoll = false;
-  constructor() {}
+  constructor(public dialog: MatDialog, private snackBar: MatSnackBar) {}
 
-  actions = [this.triggerMissionPassed, this.triggerRickRoll, this.onPress];
+  actions = [this.triggerMissionPassed, this.triggerRickRoll, this.onPress, this.triggerDeveloperMode];
 
 
   onPress() {
@@ -98,14 +101,40 @@ export class AppComponent{
   arrayEquals(arr1: string[], arr2: string[]) {
     return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
   }
+  currentActionIndex = 0; // New property to keep track of the current action index
 
-  executeRandomAction() {
-    // Select a random action
-    const randomAction = this.actions[Math.floor(Math.random() * this.actions.length)];
+  executeRandomAction(){ // Call the current action
+  this.actions[this.currentActionIndex].call(this);
 
-    // Call the selected action
-    randomAction.call(this);
+  // Increment the index to point to the next action
+  this.currentActionIndex++;
+
+  // If the last action has been executed, reset the index
+  if (this.currentActionIndex >= this.actions.length) {
+    this.currentActionIndex = 0;
   }
+}
+
+  triggerDeveloperMode() {
+    let snackBarRef = this.snackBar.open('Developer mode activated!', 'OK', {
+      duration: 10000, // Adjust the duration as needed
+      verticalPosition: 'bottom', // Position the snackbar at the top
+      panelClass: ['green-snackbar'] // Apply the custom CSS class
+
+    });
+
+    // Subscribe to the 'OK' button click event
+    snackBarRef.onAction().subscribe(() => {
+      this.openDeveloperModeDialog();
+    });
+  }
+  openDeveloperModeDialog() {
+    this.dialog.open(DeveloperModeComponent, {
+      width: '50%',
+      height: '50%',
+    });
+  }
+
 
 }
 
