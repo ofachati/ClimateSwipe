@@ -93,10 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/_dark-theme.scss",
-              "src/_light-theme.scss",
-              "src/_xmas-theme.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           }

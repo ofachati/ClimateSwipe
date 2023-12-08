@@ -28,12 +28,14 @@ export class TinderCardComponent {
 
   openDialog(isCorrect: boolean) {
     this.dialog.open(ResponseDialogComponent, {
+      width: '500px', // Set your desired width here
       data: {
         isCorrect: isCorrect,
         response: this.cardData.response
       }
     });
   }
+  
 
   swipeLeft() {
     this.openDialog(this.cardData.isReal === false);

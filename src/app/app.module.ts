@@ -25,6 +25,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { TetrisComponent } from './components/tetris/tetris.component';
 import { TinderCardComponent } from './components/tinder-card/tinder-card.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { FormsModule } from '@angular/forms';
     MatToolbarModule,
     MatMenuModule,
     MatRadioModule,
-    FormsModule
+    FormsModule,
+    CommonModule
 
   ],
   providers: [],
