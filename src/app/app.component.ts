@@ -10,10 +10,12 @@ import { trigger, style, animate, transition } from '@angular/animations';
 
 export class AppComponent{
   showSinger: boolean = false;
+  showMission: boolean = false;
 
   barrelRoll = false;
   constructor() {}
 
+  actions = [this.triggerMissionPassed, this.triggerRickRoll, this.onPress];
 
 
   onPress() {
@@ -24,6 +26,23 @@ export class AppComponent{
       }, 3000); 
   }
 
+  triggerMissionPassed() {
+    const audioElement = document.getElementById('missionPassedAudio') as HTMLAudioElement;
+
+    // Play the music only if it's not already playing
+    if (audioElement.paused) {
+      audioElement.play();
+      // Show the sliding animation
+      this.showMission = true;
+      // Stop the audio after 10 seconds (adjust the duration as needed)
+      setTimeout(() => {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+        this.showMission = false;
+      }, 7000); //9 seconds in milliseconds
+    }
+  }
+
   
   triggerRickRoll() {
     const audioElement = document.getElementById('rickRollAudio') as HTMLAudioElement;
@@ -31,10 +50,8 @@ export class AppComponent{
     // Play the music only if it's not already playing
     if (audioElement.paused) {
       audioElement.play();
-
       // Show the sliding animation
       this.showSinger = true;
-
       // Stop the audio after 10 seconds (adjust the duration as needed)
       setTimeout(() => {
         audioElement.pause();
@@ -47,9 +64,9 @@ export class AppComponent{
   easterEggs: { code: string[]; action: () => void }[] = [
     {
       code: ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'],
-      action: () => this.triggerRickRoll(),
-    },
-    // Add more Easter eggs as needed
+      action: () =>  this.executeRandomAction(),
+    }
+  
   ];
 
   enteredKeys: string[] = [];
@@ -82,7 +99,13 @@ export class AppComponent{
     return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
   }
 
- 
+  executeRandomAction() {
+    // Select a random action
+    const randomAction = this.actions[Math.floor(Math.random() * this.actions.length)];
+
+    // Call the selected action
+    randomAction.call(this);
+  }
 
 }
 

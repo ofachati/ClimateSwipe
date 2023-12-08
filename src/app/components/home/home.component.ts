@@ -1,6 +1,5 @@
 
 import { Component } from '@angular/core';
-import { Subject} from 'rxjs';
 import { Assumption } from 'src/app/models/assumption.model';
 import assumptions from 'src/assets/users.json';
 

@@ -28,17 +28,23 @@ export class FooterComponent {
     this.clickCount++;
     if (this.clickCount === 7) {
       this.showDeveloperModeSnackBar();
-      this.openDeveloperModeDialog();
       this.clickCount = 0; // Reset the count after opening the dialog
     }
   }
 
   showDeveloperModeSnackBar() {
-    this.snackBar.open('Developer mode activated!', 'OK', {
+    let snackBarRef = this.snackBar.open('Developer mode activated!', 'OK', {
       duration: 10000, // Adjust the duration as needed
-      verticalPosition: 'top', // Position the snackbar at the top
+      verticalPosition: 'bottom', // Position the snackbar at the top
+      panelClass: ['green-snackbar'] // Apply the custom CSS class
+
     });
-  }  
+
+    // Subscribe to the 'OK' button click event
+    snackBarRef.onAction().subscribe(() => {
+      this.openDeveloperModeDialog();
+    });
+  }
 
   openDeveloperModeDialog() {
     this.dialog.open(DeveloperModeComponent, {

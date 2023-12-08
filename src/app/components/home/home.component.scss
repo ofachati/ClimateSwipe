@@ -1,18 +1,13 @@
-.tbg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  
-    /* Green gradient background */
-    background: linear-gradient(to right, #fafafa, #c9d6dc);
-  }
-  
-  /* Additional styling for header and footer */
-  .header, .footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
+/* Add this at the top of your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=CoolFont&display=swap');
+
+.container {
+  background-image: url('/assets/pictures/background.avif'); /* Replace with your actual image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'CoolFont', sans-serif; /* Replace 'CoolFont' with your chosen font */
+}
+
+.section h1 {
+  color: white; /* Or any color that contrasts well with your background */
+}

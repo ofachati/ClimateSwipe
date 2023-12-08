@@ -4,12 +4,9 @@
       width="40"
       alt="Angular Logo"
 src="favicon.ico"    />
-    <span>Init To win it</span>
+    <span>ClimateSwipe</span>
     <span class="spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-
+  
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="themeMenu">
       <mat-icon>color_lens</mat-icon>
     </button>
@@ -18,7 +15,6 @@ src="favicon.ico"    />
     <mat-radio-group aria-label="Select a theme" (change)="changeTheme($event.value)">
       <mat-radio-button value="default">Default Theme</mat-radio-button>
       <mat-radio-button value="dark">Dark Theme</mat-radio-button>
-      <mat-radio-button value="light">Light Theme</mat-radio-button>
       <mat-radio-button value="christmas">Christmas Theme</mat-radio-button>
     </mat-radio-group>
   </mat-menu>
