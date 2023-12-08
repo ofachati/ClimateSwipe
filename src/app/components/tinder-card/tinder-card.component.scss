@@ -1,0 +1,11 @@
+.mat-card-actions {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the end (right side) */
+    align-items: center; /* Vertically centers the buttons */
+  }
+  
+  button.mat-fab {
+    margin-left: 10px; /* Adds space between buttons */
+    font-size: 24px; /* Adjust as needed to change the size of the icons */
+  }
+  

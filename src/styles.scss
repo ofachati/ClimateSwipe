@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-
+/*
 @use '_dark-theme.scss' as darkTheme;
 @use '_light-theme.scss' as lightTheme;
 @use '_xmas-theme.scss' as xmasTheme;
@@ -14,7 +14,7 @@ body.theme-light {
 body.theme-christmas {
   @include mat.all-component-themes(xmasTheme.$christmas-theme);
 }
-
+*/
 * {
     padding: 0;
     margin: 0;

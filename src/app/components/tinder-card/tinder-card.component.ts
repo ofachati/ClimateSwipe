@@ -2,9 +2,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, keyframes, animate, transition } from "@angular/animations";
 import * as kf from './keyframes';
 import { Subject } from 'rxjs';
-import { User } from './user';
 import { MatDialog } from '@angular/material/dialog';
 import { Assumption } from 'src/app/models/assumption.model';
+import { ResponseDialogComponent } from '../response-dialog/response-dialog.component';
 
 @Component({
   selector: 'app-tinder-card',
@@ -23,18 +23,26 @@ export class TinderCardComponent {
   @Input() cardData!: Assumption;
   @Output() next = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+
+  openDialog(isCorrect: boolean) {
+    this.dialog.open(ResponseDialogComponent, {
+      data: {
+        isCorrect: isCorrect,
+        response: this.cardData.response
+      }
+    });
+  }
 
   swipeLeft() {
-    // Handle left swipe logic
-    this.showResponse(false);
+    this.openDialog(this.cardData.isReal === false);
     this.next.emit();
 
   }
 
   swipeRight() {
-    // Handle right swipe logic
-    this.showResponse(true);
+    this.openDialog(this.cardData.isReal === true);
     this.next.emit();
 
   }
