@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Les voitures électriques",
+    "image": "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1920/https://www.encharge.fr/wp-content/uploads/2020/10/electrique_gre.png",
+    "response": "En réalité, bien que la production des batteries des voitures électriques ait un impact environnemental, les véhicules électriques ont généralement une empreinte carbone inférieure sur l'ensemble de leur cycle de vie par rapport aux voitures à essence, surtout si l'électricité provient de sources renouvelables.",
+    "isReal": true,
+    "assumption": "La production des batteries des voitures électriques a un impact, mais sur l'ensemble de leur cycle de vie, les voitures électriques ont une empreinte carbone globalement inférieure."
+  },
+  {
+    "title": "Les énergies renouvelables",
+    "image": "assumption",
+    "response": "Au contraire, les énergies renouvelables, telles que l'énergie solaire et éolienne, deviennent de plus en plus compétitives et peuvent jouer un rôle essentiel dans la satisfaction des besoins mondiaux en électricité. Les progrès technologiques les rendent plus efficaces et économiquement viables.",
+    "isReal": true,
+    "assumption": "Les énergies renouvelables, en particulier le solaire et l'éolien, sont de plus en plus compétitives et peuvent répondre à une partie significative de la demande mondiale d'électricité."
+  },
+  {
+    "title": "Le changement climatique ",
+    "image": "https://climate.esa.int/media/images/methane.width-400.png",
+    "response": "En réalité, le changement climatique se mesure sur des périodes à long terme, en examinant les tendances globales. Les variations météorologiques à court terme ne remettent pas en cause la réalité du changement climatique, qui est étayée par des données scientifiques et des modèles climatiques.",
+    "isReal": false,
+    "assumption": "Le changement climatique se mesure sur des périodes à long terme, et les variations météorologiques à court terme ne le nient pas."
+  },
+  {
+    "title": "Le changement climatique #2.",
+    "image": "chemin/vers/image4.jpg",
+    "response": "Au contraire, les activités humaines, en particulier les émissions de gaz à effet de serre, jouent un rôle significatif dans le changement climatique actuel. Il existe un large consensus scientifique sur le fait que l'activité humaine contribue de manière substantielle au réchauffement de la planète.",
+    "isReal": false,
+    "assumption": "Les activités humaines, en particulier les émissions de gaz à effet de serre, contribuent de manière significative au changement climatique actuel."
+  },
+  {
+    "title": "Plantation des arbres",
+    "image": "https://cdn.pixabay.com/photo/2016/03/10/03/28/tree-1247796_1280.png",
+    "response": "Bien que planter des arbres soit bénéfique, il n'est pas suffisant en soi. Une approche intégrée, incluant la réduction des émissions, la transition vers des énergies renouvelables et des pratiques de durabilité, est essentielle pour lutter efficacement contre le changement climatique.",
+    "isReal": true,
+    "assumption": "Bien que planter des arbres soit bénéfique, une approche intégrée est essentielle pour lutter contre le changement climatique."
+  },
+  {
+    "title": "La capture et le stockage du carbone (CSC)",
+    "image": "chemin/vers/image6.jpg",
+    "response": "Bien que la CSC puisse aider à atténuer le changement climatique, elle ne remplace pas la nécessité fondamentale de réduire les émissions. De plus, la CSC présente des risques environnementaux et doit être complémentaire à d'autres actions plutôt qu'une solution unique.",
+    "isReal": false,
+    "assumption": "La CSC peut atténuer le changement climatique, mais elle ne remplace pas la réduction des émissions, et elle présente des risques environnementaux."
+  },
+  {
+    "title": "La neutralité carbone ",
+    "image": "chemin/vers/image7.jpg",
+    "response": "En réalité, le chemin vers la neutralité carbone peut varier considérablement en fonction des contextes géographiques, économiques et sociaux. La transition nécessite des approches flexibles et adaptées, tout en respectant les principes de durabilité, et il n'existe pas de modèle unique.",
+    "isReal": false,
+    "assumption": "Le chemin vers la neutralité carbone peut varier en fonction des contextes, nécessitant des approches flexibles et adaptées."
+  }
+]

@@ -1,17 +1,19 @@
-<div class="tphoto"
-[@cardAnimator]="animationState"
-(@cardAnimator.done)="resetAnimationState()"
-(swipeleft)='startAnimation("swipeleft")' 
-(swiperight)='startAnimation("swiperight")'
->
-
-<div class="tname">{{users[index].name}}</div>
-
-<br>
-
-<img [src]="users[index].picture" title="tphoto" alt="Tinder Photo"  style="width :100% ;max-height:200px;" />
-
-<br>
-<div class="tinfo"> testststststts</div>
-</div>
-
+<mat-card class="mat-elevation-z11">
+    <mat-card-header>
+      <mat-card-title>{{ cardData.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="cardData.image" alt="Card image">
+    <mat-card-content>
+      <p>{{ cardData.assumption }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-fab color="warn" (click)="swipeLeft()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="swipeRight()">
+        <mat-icon>favorite</mat-icon>
+      </button>
+     
+    </mat-card-actions>
+  </mat-card>
+  

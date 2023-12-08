@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, keyframes, animate, transition } from "@angular/animations";
 import * as kf from './keyframes';
-import data from './users.json';
 import { Subject } from 'rxjs';
 import { User } from './user';
+import { MatDialog } from '@angular/material/dialog';
+import { Assumption } from 'src/app/models/assumption.model';
 
 @Component({
   selector: 'app-tinder-card',
@@ -19,37 +20,27 @@ import { User } from './user';
 })
 export class TinderCardComponent {
 
-  public users: User[] = data;
-  public index = 0;
-  @Input()
-  parentSubject!: Subject<any>;
+  @Input() cardData!: Assumption;
+  @Output() next = new EventEmitter<void>();
 
-
-
-  animationState!: string;
   constructor() { }
 
-  ngOnInit() {
-  
-    this.parentSubject.subscribe(event => {
-      this.startAnimation(event)
-    });
+  swipeLeft() {
+    // Handle left swipe logic
+    this.showResponse(false);
+    this.next.emit();
+
   }
 
-  startAnimation(state: string) {
-    if (!this.animationState) {
-      this.animationState = state;
-    }
+  swipeRight() {
+    // Handle right swipe logic
+    this.showResponse(true);
+    this.next.emit();
+
   }
 
-  resetAnimationState() {
-    this.animationState = '';
-    this.index++;
+  showResponse(userChoice: boolean) {
+    // Compare userChoice with cardData.isReal and show response accordingly
+    // You can use MatDialog here to show the response
   }
-
-
-  ngOnDestroy() {
-    this.parentSubject.unsubscribe();
-  }
-
 }

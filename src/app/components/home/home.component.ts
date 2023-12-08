@@ -1,6 +1,10 @@
 
 import { Component } from '@angular/core';
 import { Subject} from 'rxjs';
+import { Assumption } from 'src/app/models/assumption.model';
+import assumptions from 'src/assets/users.json';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,13 +12,18 @@ import { Subject} from 'rxjs';
 })
 export class HomeComponent {
 
-  parentSubject:Subject<string> = new Subject();
-  constructor() {
+  currentAssumption!: Assumption;
+  private currentIndex: number = 0;
 
+  constructor() { }
+
+  ngOnInit() {
+    this.currentAssumption = assumptions[this.currentIndex];
   }
 
- cardAnimation(value: string) {
-    this.parentSubject.next(value);
+  goToNextAssumption() {
+    this.currentIndex = (this.currentIndex + 1) % assumptions.length;
+    this.currentAssumption = assumptions[this.currentIndex];
   }
 
 }
