@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { trigger, keyframes, animate, transition } from "@angular/animations";
+import { trigger, state,keyframes, animate, transition, style } from "@angular/animations";
 import * as kf from './keyframes';
 import { Subject } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,9 +11,14 @@ import { ResponseDialogComponent } from '../response-dialog/response-dialog.comp
   templateUrl: './tinder-card.component.html',
   styleUrls: ['./tinder-card.component.scss'],
   animations: [
-    trigger('cardAnimator', [
-      transition('* => swiperight', animate(750, keyframes(kf.swiperight))),
-      transition('* => swipeleft', animate(750, keyframes(kf.swipeleft)))
+    trigger('swipeAnimation', [
+      state('left', style({
+        transform: 'translateX(-100%)'
+      })),
+      state('right', style({
+        transform: 'translateX(100%)'
+      })),
+      transition('* => *', animate('400ms ease'))
     ])
   ]
 
@@ -22,6 +27,7 @@ export class TinderCardComponent {
 
   @Input() cardData!: Assumption;
   @Output() next = new EventEmitter<void>();
+  swipeState!: 'left' | 'right' | '';
 
   constructor(public dialog: MatDialog) { }
 
