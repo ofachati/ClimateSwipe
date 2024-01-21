@@ -116,7 +116,39 @@ emissionsPerCapitaData = this.normalizeData(emissionsPerCapitaData);
     }
   ];
 }
+//bubble chart 
 
+// Method to get data for the bubble chart
+getEmissionsIntensityData(): any[] {
+  const latestYear = 2018;
+  const latestYearData = Object.entries(emissionsData as unknown as EmissionsData)
+    .map(([country, data]): any => {
+      const yearData: any = data.data.find(d => d.year === latestYear);
 
+      if (yearData && this.isValidDataPoint(yearData) && country !== 'World') {
+        const emissionsIntensity = yearData.co2 / yearData.gdp;
+        return {
+          name: country,
+          series: [{
+            name: latestYear.toString(),
+            x: yearData.gdp,
+            y: yearData.co2,
+            r: emissionsIntensity
+          }]
+        };
+      }
+      return null;
+    })
+    .filter(entry => entry !== null); // Filter out null entries
 
+  return latestYearData;
 }
+
+
+
+private isValidDataPoint(dataPoint: any): boolean {
+  return dataPoint.gdp != null && dataPoint.co2 != null && dataPoint.co2 / dataPoint.gdp != null ;
+}
+}
+
+

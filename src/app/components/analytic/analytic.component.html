@@ -3,6 +3,7 @@
 
 <H1>Statistiques</H1><br>
 
+<h2>My Chart Title</h2>
 <ngx-charts-line-chart
   [view]="[700, 300]"
   [results]="multi"
@@ -17,6 +18,7 @@
   [animations]="true">
 </ngx-charts-line-chart>
 
+<h2>My Chart Title</h2>
 <ngx-charts-bar-vertical
 [view]="[700, 300]"
   [results]="topEmittingCountries"
@@ -29,6 +31,7 @@
   [yAxisLabel]="'CO2 Emissions (million tonnes)'">
 </ngx-charts-bar-vertical>
 
+<h2>My Chart Title</h2>
 <ngx-charts-advanced-pie-chart
   [view]="[750, 550]"
   [results]="advancedPiechartData"
@@ -51,5 +54,15 @@
   [animations]="true">
 </ngx-charts-line-chart>
 
+<h2>Emissions Intensity by Country</h2>
+<ngx-charts-bubble-chart
+  [view]="[700, 400]"
+  [results]="bubbleChartData"
+  [xAxis]="true"
+  [yAxis]="true"
+  [xAxisLabel]="'GDP'"
+  [yAxisLabel]="'CO2 Emissions'"
+  [tooltipDisabled]="false">
+</ngx-charts-bubble-chart>
 
 </div>

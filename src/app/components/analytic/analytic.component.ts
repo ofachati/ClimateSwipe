@@ -19,6 +19,8 @@ export class AnalyticComponent implements OnInit {
  topEmittingCountries!: any[];
  advancedPiechartData!: any[];
  lineChartCo2TempData!: any[];
+ bubbleChartData!: any[];
+
 
   constructor(private dataService: DataService) {}
 
@@ -31,7 +33,9 @@ export class AnalyticComponent implements OnInit {
     this.advancedPiechartData = this.dataService.getEmissionSourcesForYear(recentYear);
     //line co2 temp
     this.lineChartCo2TempData = this.dataService.getCombinedEmissionsAndTemperatureData();
-console.log(this.lineChartCo2TempData);
+//buube chart
+this.bubbleChartData = this.dataService.getEmissionsIntensityData();
+console.log(this.bubbleChartData);
   }
 
   formatData(): void {

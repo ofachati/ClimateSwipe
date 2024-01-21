@@ -3,6 +3,7 @@ export interface EmissionRecord {
     population: number;
     cement_co2: number;
     cement_co2_per_capita: number;
+    gdp: number;
     co2: number;
     co2_growth_abs: number;
     co2_growth_prct: number;
