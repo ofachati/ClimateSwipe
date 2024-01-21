@@ -29,13 +29,27 @@
   [yAxisLabel]="'CO2 Emissions (million tonnes)'">
 </ngx-charts-bar-vertical>
 
-<ngx-charts-pie-chart
-  [view]="[700, 300]"
+<ngx-charts-advanced-pie-chart
+  [view]="[750, 550]"
   [results]="advancedPiechartData"
   [gradient]="true"
+ >
+</ngx-charts-advanced-pie-chart>
+
+<h2>My Chart Title</h2>
+<ngx-charts-line-chart
+  [view]="[700, 400]"
+  [results]="lineChartCo2TempData"
+  [xAxis]="true"
+  [yAxis]="true"
   [legend]="true"
-  [labels]="true"
-  [doughnut]="true">
-</ngx-charts-pie-chart>
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxisLabel]="'Year'"
+  [yAxisLabel]="'Values'"
+  [timeline]="true"
+  [animations]="true">
+</ngx-charts-line-chart>
+
 
 </div>

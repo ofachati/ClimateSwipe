@@ -18,6 +18,7 @@ export class AnalyticComponent implements OnInit {
 
  topEmittingCountries!: any[];
  advancedPiechartData!: any[];
+ lineChartCo2TempData!: any[];
 
   constructor(private dataService: DataService) {}
 
@@ -28,8 +29,9 @@ export class AnalyticComponent implements OnInit {
     //pie
     const recentYear = 2022; // Replace with logic to determine the recent year
     this.advancedPiechartData = this.dataService.getEmissionSourcesForYear(recentYear);
-
-
+    //line co2 temp
+    this.lineChartCo2TempData = this.dataService.getCombinedEmissionsAndTemperatureData();
+console.log(this.lineChartCo2TempData);
   }
 
   formatData(): void {

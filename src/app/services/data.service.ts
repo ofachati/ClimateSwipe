@@ -11,6 +11,16 @@ export class DataService {
   constructor() { 
 
   }
+  normalizeData(data: any[]): any[] {
+    const maxVal = Math.max(...data.map(d => d.value));
+    const minVal = Math.min(...data.map(d => d.value));
+
+    return data.map(d => ({
+      name: d.name,
+      value: (d.value - minVal) / (maxVal - minVal)
+    }));
+  }
+
 //bar chart
   getTopEmittingCountries(): any[] {
     const recentYear = this.getMostRecentYear();
@@ -51,5 +61,62 @@ getEmissionSourcesForYear(year: number): any[] {
 
   return emissionSources;
 }
+
+
+/// co2- co2 per capita - and temp line chart
+
+getEmissionsOverTime(): any[] {
+  // Assuming 'World' contains global CO2 emissions data
+  const worldData = (emissionsData as unknown as EmissionsData)['World'].data;
+  return worldData.map(d => ({ name: d.year, value: d.co2 }));
+}
+
+getEmissionsPerCapitaOverTime(): any[] {
+  // Assuming 'World' contains global CO2 emissions data
+  const worldData = (emissionsData as unknown as EmissionsData)['World'].data;
+  return worldData.map(d => ({
+    name: d.year,
+    value: d.co2_per_capita || 0
+  }));
+}
+getTemperatureAnomaliesOverTime(): any[] {
+  const worldData = (emissionsData as unknown as EmissionsData)['World'].data;
+  return worldData.map(d => {
+    const totalAnomaly = d.temperature_change_from_ch4 + d.temperature_change_from_co2 +
+                         d.temperature_change_from_ghg + d.temperature_change_from_n2o;
+
+    return {
+      name: d.year,
+      value: isNaN(totalAnomaly) ? 0 : totalAnomaly // Replace NaN values with 0 or filter them out
+    };
+  }).filter(d => !isNaN(d.value)); // Optionally, filter out the years with NaN values
+}
+
+getCombinedEmissionsAndTemperatureData(): any[] {
+  let emissionsData = this.getEmissionsOverTime();
+  let temperatureData = this.getTemperatureAnomaliesOverTime();
+  let emissionsPerCapitaData = this.getEmissionsPerCapitaOverTime();
+
+// Normalize the data
+emissionsData = this.normalizeData(emissionsData);
+temperatureData = this.normalizeData(temperatureData);
+emissionsPerCapitaData = this.normalizeData(emissionsPerCapitaData);
+  return [
+    {
+      name: 'CO2 Emissions',
+      series: emissionsData
+    },
+    {
+      name: 'Temperature Anomaly',
+      series: temperatureData
+    },
+    {
+      name: 'CO2 Emissions per Capita',
+      series: emissionsPerCapitaData
+    }
+  ];
+}
+
+
 
 }

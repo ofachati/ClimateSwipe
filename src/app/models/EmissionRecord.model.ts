@@ -55,6 +55,10 @@ export interface EmissionRecord {
     share_global_oil_co2: number;
     share_global_other_co2: number;
     // Add any other fields that are present in your data
+    temperature_change_from_ch4 : number;
+    temperature_change_from_co2: number; 
+    temperature_change_from_ghg: number;
+    temperature_change_from_n2o: number;
   }
   
  
