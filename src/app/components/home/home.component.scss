@@ -4,8 +4,10 @@
 .container {
   background-image: url('/assets/pictures/background.avif'); /* Replace with your actual image path */
   background-size: cover;
+  background-color: black;
   background-repeat: no-repeat;
   font-family: 'CoolFont', sans-serif; /* Replace 'CoolFont' with your chosen font */
+  min-height: 100vh ;
 }
 
 .section h1 {

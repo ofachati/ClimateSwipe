@@ -1,21 +1,23 @@
 <mat-toolbar class="toolbar" role="banner" color="warn">
 
-    <img
-      width="40"
-      alt="Angular Logo"
-src="favicon.ico"    />
-    <span>ClimateSwipe</span>
-    <span class="spacer"></span>
-  
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [matMenuTriggerFor]="themeMenu">
-      <mat-icon>color_lens</mat-icon>
-    </button>
-    
-  <mat-menu #themeMenu="matMenu">
-    <mat-radio-group aria-label="Select a theme" (change)="changeTheme($event.value)">
-      <mat-radio-button value="default">Default Theme</mat-radio-button>
-      <mat-radio-button value="dark">Dark Theme</mat-radio-button>
-      <mat-radio-button value="christmas">Christmas Theme</mat-radio-button>
-    </mat-radio-group>
-  </mat-menu>
-  </mat-toolbar>
+  <img width="40" alt="Angular Logo" src="favicon.ico" />
+  <span>ClimateSwipe</span>
+  <span class="spacer"></span>
+
+  <!-- Updated buttons with routing and spacing -->
+  <button mat-button routerLink="/" class="toolbar-button">
+    <mat-icon>touch_app</mat-icon>
+    Swipe
+  </button>
+  <button mat-button routerLink="/analytic" class="toolbar-button">
+    <mat-icon>bar_chart</mat-icon>
+    Statistics
+  </button>
+  <button mat-button routerLink="/ai" class="toolbar-button">
+    <mat-icon>psychology</mat-icon>
+    AI
+  </button>
+
+  <span class="spacer"></span> <!-- Another spacer for right alignment of remaining items -->
+
+</mat-toolbar>

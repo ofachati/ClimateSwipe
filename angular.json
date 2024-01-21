@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "nuit_info_front:build:production"
+              "buildTarget": "nuit_info_front:build:production"
             },
             "development": {
-              "browserTarget": "nuit_info_front:build:development"
+              "buildTarget": "nuit_info_front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nuit_info_front:build"
+            "buildTarget": "nuit_info_front:build"
           }
         },
         "test": {

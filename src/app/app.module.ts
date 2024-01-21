@@ -26,7 +26,8 @@ import { TetrisComponent } from './components/tetris/tetris.component';
 import { TinderCardComponent } from './components/tinder-card/tinder-card.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AnalyticComponent } from './components/analytic/analytic.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CommonModule } from '@angular/common';
     NotFoundComponent,
     TetrisComponent,
     TinderCardComponent,
+    AnalyticComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { CommonModule } from '@angular/common';
     MatMenuModule,
     MatRadioModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgxChartsModule
 
   ],
   providers: [],

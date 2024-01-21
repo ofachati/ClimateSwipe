@@ -1,0 +1,41 @@
+<div class="container" >
+<br><br><br><br>
+
+<H1>Statistiques</H1><br>
+
+<ngx-charts-line-chart
+  [view]="[700, 300]"
+  [results]="multi"
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxis]="true"
+  [yAxis]="true"
+  [xAxisLabel]="'Year'"
+  [yAxisLabel]="'CO2 Emissions'"
+  [timeline]="true"
+  [animations]="true">
+</ngx-charts-line-chart>
+
+<ngx-charts-bar-vertical
+[view]="[700, 300]"
+  [results]="topEmittingCountries"
+  [xAxis]="true"
+  [yAxis]="true"
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxisLabel]="'Country'"
+  [yAxisLabel]="'CO2 Emissions (million tonnes)'">
+</ngx-charts-bar-vertical>
+
+<ngx-charts-pie-chart
+  [view]="[700, 300]"
+  [results]="advancedPiechartData"
+  [gradient]="true"
+  [legend]="true"
+  [labels]="true"
+  [doughnut]="true">
+</ngx-charts-pie-chart>
+
+</div>
