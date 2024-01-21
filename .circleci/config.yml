@@ -23,7 +23,8 @@ jobs:
           name: Deploy to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/strangefront.git main
-
+          no_output_timeout: 60m
+          
 workflows:
   build-and-deploy:
     jobs:
