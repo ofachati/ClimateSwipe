@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private emissionsDataUrl = 'https://raw.githubusercontent.com/ofachati/nuit_info_front/main/src/assets/datasets/owid-co2-data.json'; // Replace with your data URL
+  private emissionsDataUrl = 'https://raw.githubusercontent.com/ofachati/testrepo/main/climateData.json'; // Replace with your data URL
   private emissionsData: EmissionsData | null = null;
 
   constructor(private http: HttpClient) { 
