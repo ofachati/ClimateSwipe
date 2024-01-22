@@ -2,67 +2,130 @@
 <br><br><br><br>
 
 <H1>Statistiques</H1><br>
+<mat-grid-list cols="2" rowHeight="250px">
 
-<h2>My Chart Title</h2>
+<mat-grid-tile rowspan="2">
+<div>
+<h3>Émissions Globales de CO2 en Fonction de la Population</h3>
 <ngx-charts-line-chart
-  [view]="[700, 300]"
-  [results]="multi"
-  [legend]="true"
+  [view]="[700, 400]"
+  [results]="countryEmmisionByYear"
+  [legend]="false"
   [showXAxisLabel]="true"
   [showYAxisLabel]="true"
   [xAxis]="true"
   [yAxis]="true"
-  [xAxisLabel]="'Year'"
-  [yAxisLabel]="'CO2 Emissions'"
+  [xAxisLabel]="'population'"
+  [yAxisLabel]="'Emissions de CO2'"
   [timeline]="true"
   [animations]="true">
 </ngx-charts-line-chart>
+</div>
+</mat-grid-tile>
 
-<h2>My Chart Title</h2>
+
+<mat-grid-tile rowspan="2">
+    <div>
+    <h3>Corrélation entre Émissions de CO2 et Anomalies de Température</h3>
+    <ngx-charts-line-chart
+      [view]="[700, 400]"
+      [results]="lineChartCo2TempData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Année'"
+      [yAxisLabel]="'Valeur normalisée'"
+      [timeline]="true"
+      [animations]="true">
+    </ngx-charts-line-chart>
+    </div>
+    </mat-grid-tile>
+    
+    <mat-grid-tile colspan="2" rowspan="1">
+        <div>
+        <p>Dans la première visualisation, intitulée "Émissions Globales de CO2 en Fonction de la Population", nous observons une courbe ascendante démontrant l'augmentation des émissions de CO2 en corrélation avec la croissance démographique mondiale. Cette représentation graphique vient contester l'idée reçue que l'augmentation des émissions est uniquement due à l'industrialisation, en mettant en lumière l'influence significative de la population sur l'empreinte carbone.
+        </p><p>La deuxième visualisation, "Corrélation entre Émissions de CO2 et Changement de Température", met en parallèle l'accroissement des émissions de CO2 et les changment de température sur une échelle de temps. Ce graphique normalisé permet d'observer les tendances sans être influencé par les échelles différentes, offrant une perspective claire sur la manière dont ces deux phénomènes évoluent proportionnellement, La superposition des deux courbes révèle comment l'augmentation des émissions de CO2 s'accompagne souvent d'une hausse des températures, mettant en évidence le lien étroit entre activités humaines et changement climatique. Ce graphique déconstruit le mythe selon lequel les changements de température sont un phénomène naturel et non lié aux actions humaines, en exposant la synchronisation remarquable entre les deux tendances.
+        </p>
+    </div>  
+    </mat-grid-tile>
+
+<mat-grid-tile rowspan="2">
+<div>
+<h3>Profil des Émissions par Région</h3>
 <ngx-charts-bar-vertical
-[view]="[700, 300]"
+[view]="[700, 450]"
   [results]="topEmittingCountries"
   [xAxis]="true"
   [yAxis]="true"
   [legend]="true"
   [showXAxisLabel]="true"
   [showYAxisLabel]="true"
-  [xAxisLabel]="'Country'"
-  [yAxisLabel]="'CO2 Emissions (million tonnes)'">
+  [xAxisLabel]="'Pays'"
+  [yAxisLabel]="'Émissions (millions de tonnes)'">
 </ngx-charts-bar-vertical>
+</div>
+</mat-grid-tile >
+<mat-grid-tile rowspan="2">
+    <p>Ce graphique, que nous pourrions intituler "Profil des Émissions par Région", révèle la quantité de CO2 émise par différentes régions et pays. Il met en lumière la répartition inégale des émissions, défiant ainsi la croyance répandue que les émissions sont uniformément réparties à travers le monde. En effet, des acteurs économiques majeurs tels que l'Asie et les pays à revenu élevé figurent en tête, ce qui invite à une réflexion sur les responsabilités différenciées dans la lutte contre le changement climatique.
 
-<h2>My Chart Title</h2>
+    </p>
+</mat-grid-tile>
+
+<mat-grid-tile rowspan="2">
+    <p>Ce graphique confronte l'intensité des émissions, mesurée en CO2 émis par unité de PIB, à la richesse économique des pays. Cette représentation éclaire la notion erronée que la prospérité économique est synonyme d'une grande empreinte carbone. Des pays à fort PIB par habitant présentent parfois une faible intensité d'émissions, ce qui illustre leur efficacité économique en matière de production de CO2. Cette visualisation offre une perspective nuancée, montrant que développement économique et durabilité environnementale peuvent coexister.</p>
+</mat-grid-tile>
+<mat-grid-tile rowspan="2">
+    <div>
+    <h3>Intensité des Émissions par PIB et par Pays</h3>
+    <ngx-charts-bubble-chart
+      [view]="[700, 400]"
+      [results]="bubbleChartData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'PIB par habitant'"
+      [yAxisLabel]="'Émissions CO2'"
+      [tooltipDisabled]="false">
+    </ngx-charts-bubble-chart>
+    </div>
+    </mat-grid-tile>
+   
+
+<mat-grid-tile rowspan="2">
+<div>
+<h3>My Chart Title</h3>
 <ngx-charts-advanced-pie-chart
-  [view]="[750, 550]"
+  [view]="[750, 200]"
   [results]="advancedPiechartData"
   [gradient]="true"
  >
 </ngx-charts-advanced-pie-chart>
+</div>
+</mat-grid-tile>
 
-<h2>My Chart Title</h2>
-<ngx-charts-line-chart
+
+
+<mat-grid-tile><div>
+<h3>CO2 Emissions Profile by Source for Selected Countries</h3>
+<ngx-charts-polar-chart
   [view]="[700, 400]"
-  [results]="lineChartCo2TempData"
-  [xAxis]="true"
-  [yAxis]="true"
+  [results]="emissionsProfileData"
   [legend]="true"
+  [legendTitle]="'Pays'"
+  
   [showXAxisLabel]="true"
-  [showYAxisLabel]="true"
-  [xAxisLabel]="'Year'"
-  [yAxisLabel]="'Values'"
-  [timeline]="true"
-  [animations]="true">
-</ngx-charts-line-chart>
-
-<h2>Emissions Intensity by Country</h2>
-<ngx-charts-bubble-chart
-  [view]="[700, 400]"
-  [results]="bubbleChartData"
-  [xAxis]="true"
+[showYAxisLabel]="true"
+[xAxisLabel]="'source d émission'"
+[yAxisLabel]="'Valeur d émission'"
+[xAxis]="true"
   [yAxis]="true"
-  [xAxisLabel]="'GDP'"
-  [yAxisLabel]="'CO2 Emissions'"
-  [tooltipDisabled]="false">
-</ngx-charts-bubble-chart>
+  >
+</ngx-charts-polar-chart>
+</div>
+</mat-grid-tile>
 
+</mat-grid-list>
 </div>

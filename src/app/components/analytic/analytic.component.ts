@@ -13,19 +13,18 @@ import * as Data from 'src/assets/datasets/owid-co2-data.json';
 
 
 export class AnalyticComponent implements OnInit {
-  multi!: any[]; // This will hold the formatted data for the chart
  // view: [number, number] = [700, 300]; // Chart dimensions
-
+ countryEmmisionByYear!: any[]; // This will hold the formatted data for the chart
  topEmittingCountries!: any[];
  advancedPiechartData!: any[];
  lineChartCo2TempData!: any[];
  bubbleChartData!: any[];
-
-
+ emissionsProfileData!: any[];
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.formatData();
+    //line co2 by country
+    this.countryEmmisionByYear=this.dataService.co2ByCountry();
     //bar
     this.topEmittingCountries = this.dataService.getTopEmittingCountries();
     //pie
@@ -35,23 +34,11 @@ export class AnalyticComponent implements OnInit {
     this.lineChartCo2TempData = this.dataService.getCombinedEmissionsAndTemperatureData();
 //buube chart
 this.bubbleChartData = this.dataService.getEmissionsIntensityData();
-console.log(this.bubbleChartData);
+//polar chart
+this.emissionsProfileData = this.dataService.getEmissionsProfileBySourceForYear(2022);
+console.log(this.emissionsProfileData);
+
   }
 
-  formatData(): void {
-    // Cast the imported data to the appropriate type
-    const data: EmissionsData = Data as unknown as EmissionsData;
 
-    this.multi = ['World','United States','Africa'].map(country => {
-      return {
-        name: country,
-        series: data[country].data.map((entry: EmissionRecord) => {
-          return {
-            name: entry.year.toString(),
-            value: entry.co2
-          };
-        })
-      };
-    });
-  }
 }

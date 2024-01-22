@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import emissionsData from 'src/assets/datasets/owid-co2-data.json';
 import { EmissionsData } from '../models/EmissionsData.model';
 import { EmissionRegion } from '../models/EmissionRegion.model';
+import { EmissionRecord } from '../models/EmissionRecord.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,43 @@ export class DataService {
       value: (d.value - minVal) / (maxVal - minVal)
     }));
   }
+
+  getAllCountries(): string[] {
+    return Object.keys(emissionsData as unknown as EmissionsData);
+  }
+
+  getAllYears(): number[] {
+    const startYear = 1750;
+    const endYear = 2022;
+    const years = [];
+    for (let year = startYear; year <= endYear; year++) {
+      years.push(year);
+    }
+    return years;
+  }
+
+//line co2 country by population
+co2ByCountry(): any[] {
+  const selectedCountries = ['World'];
+  const emissionsByCountry: any[] = [];
+
+  selectedCountries.forEach(country => {
+    const countryData = (emissionsData as unknown as EmissionsData)[country];
+    if (countryData && countryData.data) {
+      const series = countryData.data.map(d => ({
+        name: d.population,
+        value: d.co2
+      }));
+
+      emissionsByCountry.push({
+        name: country,
+        series: series
+      });
+    }
+  });
+
+  return emissionsByCountry;
+}
 
 //bar chart
   getTopEmittingCountries(): any[] {
@@ -51,17 +89,28 @@ getEmissionSourcesForYear(year: number): any[] {
 
   if (worldData) {
     // Add each source with its corresponding value
-    emissionSources.push({ name: 'Cement', value: worldData.cement_co2 });
-    emissionSources.push({ name: 'Coal', value: worldData.coal_co2 });
+    emissionSources.push({ name: 'Ciment', value: worldData.cement_co2 });
+    emissionSources.push({ name: 'Charbon', value: worldData.coal_co2 });
     emissionSources.push({ name: 'Flaring', value: worldData.flaring_co2 });
-    emissionSources.push({ name: 'Gas', value: worldData.gas_co2 });
-    emissionSources.push({ name: 'Oil', value: worldData.oil_co2 });
+    emissionSources.push({ name: 'Gaz', value: worldData.gas_co2 });
+    emissionSources.push({ name: 'Pétrole', value: worldData.oil_co2 });
+    emissionSources.push({ name: 'Changement d affectation des terres', value: worldData.land_use_change_co2 });
+    emissionSources.push({ name: 'Autre', value: worldData.other_industry_co2 });
+
     // Add other sources as necessary
   }
 
   return emissionSources;
 }
-
+/*
+{ name: 'Ciment', value: countryData.cement_co2 },
+          { name: 'Charbon', value: countryData.coal_co2 },
+          { name: 'Flaring', value: countryData.flaring_co2 },
+          { name: 'Gaz', value: countryData.gas_co2 },
+          { name: 'Pétrole', value: countryData.oil_co2 },
+          { name: 'Autre industrie', value: countryData.other_industry_co2 },
+          { name: 'Changement d affectation des terres', value: countryData.land_use_change_co2 }
+*/
 
 /// co2- co2 per capita - and temp line chart
 
@@ -85,35 +134,34 @@ getTemperatureAnomaliesOverTime(): any[] {
     const totalAnomaly = d.temperature_change_from_ch4 + d.temperature_change_from_co2 +
                          d.temperature_change_from_ghg + d.temperature_change_from_n2o;
 
-    return {
+    // Use a ternary operator to handle NaN values
+    return !isNaN(totalAnomaly) ? {
       name: d.year,
-      value: isNaN(totalAnomaly) ? 0 : totalAnomaly // Replace NaN values with 0 or filter them out
-    };
-  }).filter(d => !isNaN(d.value)); // Optionally, filter out the years with NaN values
+      value: totalAnomaly
+    } : null;
+  }).filter(d => d !== null); // Filter out null values
 }
+
 
 getCombinedEmissionsAndTemperatureData(): any[] {
   let emissionsData = this.getEmissionsOverTime();
   let temperatureData = this.getTemperatureAnomaliesOverTime();
-  let emissionsPerCapitaData = this.getEmissionsPerCapitaOverTime();
+  //let emissionsPerCapitaData = this.getEmissionsPerCapitaOverTime();
 
 // Normalize the data
 emissionsData = this.normalizeData(emissionsData);
 temperatureData = this.normalizeData(temperatureData);
-emissionsPerCapitaData = this.normalizeData(emissionsPerCapitaData);
+//emissionsPerCapitaData = this.normalizeData(emissionsPerCapitaData);
   return [
     {
-      name: 'CO2 Emissions',
+      name: 'émissions',
       series: emissionsData
     },
     {
-      name: 'Temperature Anomaly',
+      name: 'Changement de température',
       series: temperatureData
-    },
-    {
-      name: 'CO2 Emissions per Capita',
-      series: emissionsPerCapitaData
     }
+    //,{ name: 'CO2 Emissions per Capita', series: emissionsPerCapitaData}
   ];
 }
 //bubble chart 
@@ -126,12 +174,13 @@ getEmissionsIntensityData(): any[] {
       const yearData: any = data.data.find(d => d.year === latestYear);
 
       if (yearData && this.isValidDataPoint(yearData) && country !== 'World') {
-        const emissionsIntensity = yearData.co2 / yearData.gdp;
+        const gdpPerCapita = yearData.gdp/yearData.population;
+        const emissionsIntensity = yearData.co2 / gdpPerCapita;
         return {
           name: country,
           series: [{
             name: latestYear.toString(),
-            x: yearData.gdp,
+            x: gdpPerCapita,
             y: yearData.co2,
             r: emissionsIntensity
           }]
@@ -147,7 +196,37 @@ getEmissionsIntensityData(): any[] {
 
 
 private isValidDataPoint(dataPoint: any): boolean {
-  return dataPoint.gdp != null && dataPoint.co2 != null && dataPoint.co2 / dataPoint.gdp != null ;
+  return dataPoint.gdp != null && dataPoint.co2 != null ;
+}
+
+//polar chart 
+
+getEmissionsProfileBySourceForYear(year: number): any[] {
+  //const selectedCountries = ['United States', 'France', 'Russia', 'Brazil']; // Example countries
+  const selectedCountries = ['United States', 'France', 'Russia', 'Brazil']; // Example countries
+
+  const emissionsProfile: any[] = [];
+
+  selectedCountries.forEach(country => {
+    const countryData = (emissionsData as unknown as EmissionsData)[country].data.find(d => d.year === year);
+
+    if (countryData) {
+      emissionsProfile.push({
+        name: country,
+        series: [
+          { name: 'Ciment', value: countryData.cement_co2 },
+          { name: 'Charbon', value: countryData.coal_co2 },
+          { name: 'Flaring', value: countryData.flaring_co2 },
+          { name: 'Gaz', value: countryData.gas_co2 },
+          { name: 'Pétrole', value: countryData.oil_co2 },
+          { name: 'Autre', value: countryData.other_industry_co2 },
+          { name: 'Changement d affectation des terres', value: countryData.land_use_change_co2 }
+        ]
+      });
+    }
+  });
+
+  return emissionsProfile;
 }
 }
 

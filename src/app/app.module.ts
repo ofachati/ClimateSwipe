@@ -28,7 +28,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AnalyticComponent } from './components/analytic/analytic.component';
-
+import { MatSelectModule } from '@angular/material/select';
+import { AiComponent } from './components/ai/ai.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { AnalyticComponent } from './components/analytic/analytic.component';
     NotFoundComponent,
     TetrisComponent,
     TinderCardComponent,
-    AnalyticComponent
+    AnalyticComponent,
+    AiComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { AnalyticComponent } from './components/analytic/analytic.component';
     MatRadioModule,
     FormsModule,
     CommonModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatSelectModule
 
   ],
   providers: [],
