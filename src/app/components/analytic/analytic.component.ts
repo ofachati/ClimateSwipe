@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EmissionRecord } from 'src/app/models/EmissionRecord.model';
 import { EmissionsData } from 'src/app/models/EmissionsData.model';
 import { DataService } from 'src/app/services/data.service';
-import * as Data from 'src/assets/datasets/owid-co2-data.json';
 
 
 @Component({

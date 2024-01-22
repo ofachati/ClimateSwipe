@@ -3,6 +3,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,21 @@ import { DeveloperModeComponent } from './components/developer-mode/developer-mo
 
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit {
   showSinger: boolean = false;
   showMission: boolean = false;
 
   barrelRoll = false;
-  constructor(public dialog: MatDialog, private snackBar: MatSnackBar) {}
+  constructor(public dialog: MatDialog, private snackBar: MatSnackBar, private dataService: DataService) {}
 
   actions = [this.triggerMissionPassed, this.triggerRickRoll, this.onPress, this.triggerDeveloperMode];
+
+  ngOnInit() {
+    this.dataService.fetchEmissionsData().subscribe(data => {
+      console.log('Fetched Emissions Data:', data);
+      // Use the data as needed
+    });
+  }
 
 
   onPress() {

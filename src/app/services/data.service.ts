@@ -1,17 +1,36 @@
 import { Injectable } from '@angular/core';
-import emissionsData from 'src/assets/datasets/owid-co2-data.json';
+//import emissionsData from 'src/assets/datasets/owid-co2-data.json';
 import { EmissionsData } from '../models/EmissionsData.model';
 import { EmissionRegion } from '../models/EmissionRegion.model';
 import { EmissionRecord } from '../models/EmissionRecord.model';
+import { Observable, of } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  private emissionsDataUrl = 'https://raw.githubusercontent.com/ofachati/nuit_info_front/main/src/assets/datasets/owid-co2-data.json'; // Replace with your data URL
+  private emissionsData: EmissionsData | null = null;
 
-  constructor() { 
-
+  constructor(private http: HttpClient) { 
+    this.fetchEmissionsData().subscribe(); // Initiate data fetching
   }
+
+  fetchEmissionsData(): Observable<EmissionsData> {
+    if (this.emissionsData) {
+      return of(this.emissionsData); // Return cached data
+    } else {
+      return this.http.get<EmissionsData>(this.emissionsDataUrl).pipe(
+        tap(data => this.emissionsData = data), // Cache fetched data
+        catchError(this.handleError<EmissionsData>('fetchEmissionsData', {} as EmissionsData))
+      );
+    }
+  }
+
+
   normalizeData(data: any[]): any[] {
     const maxVal = Math.max(...data.map(d => d.value));
     const minVal = Math.min(...data.map(d => d.value));
@@ -23,7 +42,7 @@ export class DataService {
   }
 
   getAllCountries(): string[] {
-    return Object.keys(emissionsData as unknown as EmissionsData);
+    return Object.keys(this.emissionsData as unknown as EmissionsData);
   }
 
   getAllYears(): number[] {
@@ -42,7 +61,7 @@ co2ByCountry(): any[] {
   const emissionsByCountry: any[] = [];
 
   selectedCountries.forEach(country => {
-    const countryData = (emissionsData as unknown as EmissionsData)[country];
+    const countryData = (this.emissionsData as unknown as EmissionsData)[country];
     if (countryData && countryData.data) {
       const series = countryData.data.map(d => ({
         name: d.population,
@@ -62,7 +81,7 @@ co2ByCountry(): any[] {
 //bar chart
   getTopEmittingCountries(): any[] {
     const recentYear = this.getMostRecentYear();
-    const topEmittingCountries = Object.entries(emissionsData as unknown as EmissionsData)
+    const topEmittingCountries = Object.entries(this.emissionsData as unknown as EmissionsData)
       .map(([country, data]: [string, EmissionRegion]) => {
         const recentData = data.data.find(d => d.year === recentYear);
         return { name: country, value: recentData ? recentData.co2 : 0 };
@@ -74,7 +93,7 @@ co2ByCountry(): any[] {
   }
 
   private getMostRecentYear(): number {
-    const allYears = Object.values(emissionsData as unknown as EmissionsData)
+    const allYears = Object.values(this.emissionsData as unknown as EmissionsData)
       .flatMap(source => source.data.map(d => d.year));
     return Math.max(...allYears);
   }
@@ -85,7 +104,7 @@ getEmissionSourcesForYear(year: number): any[] {
   const emissionSources = [];
 
   // Assuming 'World' or another global entry holds the data for all sources
-  const worldData = (emissionsData as unknown as EmissionsData)['World'].data.find(d => d.year === year);
+  const worldData = (this.emissionsData as unknown as EmissionsData)['World'].data.find(d => d.year === year);
 
   if (worldData) {
     // Add each source with its corresponding value
@@ -102,34 +121,26 @@ getEmissionSourcesForYear(year: number): any[] {
 
   return emissionSources;
 }
-/*
-{ name: 'Ciment', value: countryData.cement_co2 },
-          { name: 'Charbon', value: countryData.coal_co2 },
-          { name: 'Flaring', value: countryData.flaring_co2 },
-          { name: 'Gaz', value: countryData.gas_co2 },
-          { name: 'Pétrole', value: countryData.oil_co2 },
-          { name: 'Autre industrie', value: countryData.other_industry_co2 },
-          { name: 'Changement d affectation des terres', value: countryData.land_use_change_co2 }
-*/
+
 
 /// co2- co2 per capita - and temp line chart
 
 getEmissionsOverTime(): any[] {
   // Assuming 'World' contains global CO2 emissions data
-  const worldData = (emissionsData as unknown as EmissionsData)['World'].data;
+  const worldData = (this.emissionsData as unknown as EmissionsData)['World'].data;
   return worldData.map(d => ({ name: d.year, value: d.co2 }));
 }
 
 getEmissionsPerCapitaOverTime(): any[] {
   // Assuming 'World' contains global CO2 emissions data
-  const worldData = (emissionsData as unknown as EmissionsData)['World'].data;
+  const worldData = (this.emissionsData as unknown as EmissionsData)['World'].data;
   return worldData.map(d => ({
     name: d.year,
     value: d.co2_per_capita || 0
   }));
 }
 getTemperatureAnomaliesOverTime(): any[] {
-  const worldData = (emissionsData as unknown as EmissionsData)['World'].data;
+  const worldData = (this.emissionsData as unknown as EmissionsData)['World'].data;
   return worldData.map(d => {
     const totalAnomaly = d.temperature_change_from_ch4 + d.temperature_change_from_co2 +
                          d.temperature_change_from_ghg + d.temperature_change_from_n2o;
@@ -169,7 +180,7 @@ temperatureData = this.normalizeData(temperatureData);
 // Method to get data for the bubble chart
 getEmissionsIntensityData(): any[] {
   const latestYear = 2018;
-  const latestYearData = Object.entries(emissionsData as unknown as EmissionsData)
+  const latestYearData = Object.entries(this.emissionsData as unknown as EmissionsData)
     .map(([country, data]): any => {
       const yearData: any = data.data.find(d => d.year === latestYear);
 
@@ -208,7 +219,7 @@ getEmissionsProfileBySourceForYear(year: number): any[] {
   const emissionsProfile: any[] = [];
 
   selectedCountries.forEach(country => {
-    const countryData = (emissionsData as unknown as EmissionsData)[country].data.find(d => d.year === year);
+    const countryData = (this.emissionsData as unknown as EmissionsData)[country].data.find(d => d.year === year);
 
     if (countryData) {
       emissionsProfile.push({
@@ -228,6 +239,16 @@ getEmissionsProfileBySourceForYear(year: number): any[] {
 
   return emissionsProfile;
 }
+
+
+
+private handleError<T>(operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
+    console.error(`${operation} failed: ${error.message}`);
+    return of(result as T);
+  };
+}
+
 }
 
 

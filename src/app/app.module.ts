@@ -30,6 +30,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AnalyticComponent } from './components/analytic/analytic.component';
 import { MatSelectModule } from '@angular/material/select';
 import { AiComponent } from './components/ai/ai.component';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,8 @@ import { AiComponent } from './components/ai/ai.component';
     FormsModule,
     CommonModule,
     NgxChartsModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
 
   ],
   providers: [],
