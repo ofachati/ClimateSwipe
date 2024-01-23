@@ -12,6 +12,7 @@ import { DataService } from 'src/app/services/data.service';
 
 
 export class AnalyticComponent implements OnInit {
+  isLoading = true;
  // view: [number, number] = [700, 300]; // Chart dimensions
  countryEmmisionByYear!: any[]; // This will hold the formatted data for the chart
  topEmittingCountries!: any[];
@@ -22,8 +23,11 @@ export class AnalyticComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    this.dataService.fetchEmissionsData().subscribe(data => {
+      console.log('Fetched Emissions Data:', data);
+
     //line co2 by country
-    this.countryEmmisionByYear=this.dataService.co2ByCountry();
+      this.countryEmmisionByYear=this.dataService.co2ByCountry();
     //bar
     this.topEmittingCountries = this.dataService.getTopEmittingCountries();
     //pie
@@ -35,8 +39,14 @@ export class AnalyticComponent implements OnInit {
 this.bubbleChartData = this.dataService.getEmissionsIntensityData();
 //polar chart
 this.emissionsProfileData = this.dataService.getEmissionsProfileBySourceForYear(2022);
-console.log(this.emissionsProfileData);
 
+
+this.isLoading = false; // Set loading to false once data is fetched
+}, error => {
+  console.error('Error fetching data:', error);
+  this.isLoading = false; // Also set loading to false in case of error
+});
+    
   }
 
 

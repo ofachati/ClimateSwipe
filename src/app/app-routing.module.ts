@@ -8,7 +8,7 @@ import { AiComponent } from './components/ai/ai.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
-  { path: 'analytic', component: AnalyticComponent, data: { title: 'Analytics' } },
+  { path: 'statistiques', component: AnalyticComponent, data: { title: 'statistiques' } },
   { path: 'ai', component: AiComponent, data: { title: 'Ai' } },
   { path: '**', component: NotFoundComponent },
 ];

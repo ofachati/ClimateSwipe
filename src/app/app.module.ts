@@ -31,6 +31,7 @@ import { AnalyticComponent } from './components/analytic/analytic.component';
 import { MatSelectModule } from '@angular/material/select';
 import { AiComponent } from './components/ai/ai.component';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
     CommonModule,
     NgxChartsModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [],

@@ -1,7 +1,17 @@
-<div class="container" >
+<div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner class="black-spinner"></mat-spinner>
+  </div>
+
+<div class="container" *ngIf="!isLoading">
+    <!-- Spinner -->
+
 <br><br><br><br>
 
-<H1>Statistiques</H1><br>
+<H1 class="title">Climat en Chiffres</H1><br>
+<p>Bienvenue sur notre page dédiée aux statistiques climatiques, un espace conçu pour éclairer les débats actuels sur le changement climatique à l'aide de données empiriques. Nous exploitons la vaste base de données de <a href="https://github.com/owid/co2-data" target="_blank">Our World in Data</a>, une ressource complète et régulièrement mise à jour qui compile des indicateurs clés sur les émissions de CO2 et autres gaz à effet de serre. Cette collection de métriques essentielles inclut des données annuelles, par habitant, cumulatives et basées sur la consommation de CO2, les autres gaz à effet de serre, le mix énergétique, et d'autres variables pertinentes. 
+    La fiabilité de nos visualisations s'appuie sur l'exhaustivité et la précision de cette base de données, qui allie des informations provenant de diverses sources reconnues telles que l'Energy Institute (EI), l'U.S. Energy Information Administration (EIA) et le Global Carbon Project. 
+    En démystifiant les informations erronées sur le climat, notre objectif est de fournir un aperçu fiable et actualisé de l'impact humain sur notre planète, et d'offrir un outil précieux pour ceux qui cherchent à comprendre et à agir face aux défis environnementaux.
+</p>
 <mat-grid-list cols="2" rowHeight="250px">
 
 <mat-grid-tile rowspan="2">
@@ -26,7 +36,7 @@
 
 <mat-grid-tile rowspan="2">
     <div>
-    <h3>Corrélation entre Émissions de CO2 et Anomalies de Température</h3>
+    <h3>Corrélation entre Émissions et changement de Température</h3>
     <ngx-charts-line-chart
       [view]="[700, 400]"
       [results]="lineChartCo2TempData"
@@ -45,7 +55,7 @@
     
     <mat-grid-tile colspan="2" rowspan="1">
         <div>
-        <p>Dans la première visualisation, intitulée "Émissions Globales de CO2 en Fonction de la Population", nous observons une courbe ascendante démontrant l'augmentation des émissions de CO2 en corrélation avec la croissance démographique mondiale. Cette représentation graphique vient contester l'idée reçue que l'augmentation des émissions est uniquement due à l'industrialisation, en mettant en lumière l'influence significative de la population sur l'empreinte carbone.
+        <p>Dans la première visualisation nous observons une courbe ascendante démontrant l'augmentation des émissions de CO2 en corrélation avec la croissance démographique mondiale. Cette représentation graphique vient contester l'idée reçue que l'augmentation des émissions est uniquement due à l'industrialisation, en mettant en lumière l'influence significative de la population sur l'empreinte carbone.
         </p><p>La deuxième visualisation, "Corrélation entre Émissions de CO2 et Changement de Température", met en parallèle l'accroissement des émissions de CO2 et les changment de température sur une échelle de temps. Ce graphique normalisé permet d'observer les tendances sans être influencé par les échelles différentes, offrant une perspective claire sur la manière dont ces deux phénomènes évoluent proportionnellement, La superposition des deux courbes révèle comment l'augmentation des émissions de CO2 s'accompagne souvent d'une hausse des températures, mettant en évidence le lien étroit entre activités humaines et changement climatique. Ce graphique déconstruit le mythe selon lequel les changements de température sont un phénomène naturel et non lié aux actions humaines, en exposant la synchronisation remarquable entre les deux tendances.
         </p>
     </div>  
@@ -94,11 +104,11 @@
     </mat-grid-tile>
    
 
-<mat-grid-tile rowspan="2" colspan="2">
+<mat-grid-tile rowspan="1" colspan="2">
 <div>
 <h3>Contribution des Secteurs aux Émissions de CO2</h3>
 <ngx-charts-advanced-pie-chart
-  [view]="[1000, 400]"
+  [view]="[1000, 200]"
   [results]="advancedPiechartData"
   [gradient]="true"
  >

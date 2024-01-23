@@ -1,7 +1,12 @@
 <mat-toolbar class="toolbar" role="banner" color="warn">
 
-  <img width="40" alt="Angular Logo" src="favicon.ico" />
-  <span>ClimateSwipe</span>
+  <img
+  height="65%"
+  alt="Angular Logo"
+  src="assets/pictures/climateswap-logo.png"
+  routerLink="/"
+  matTooltip="Go Home"
+/>
   <span class="spacer"></span>
 
   <!-- Updated buttons with routing and spacing -->
@@ -9,13 +14,13 @@
     <mat-icon>touch_app</mat-icon>
     Swipe
   </button>
-  <button mat-button routerLink="/analytic" class="toolbar-button">
+  <button mat-button routerLink="/statistiques" class="toolbar-button">
     <mat-icon>bar_chart</mat-icon>
-    Statistics
+    Statistiques
   </button>
   <button mat-button routerLink="/ai" class="toolbar-button">
     <mat-icon>psychology</mat-icon>
-    AI
+    IA
   </button>
 
   <span class="spacer"></span> <!-- Another spacer for right alignment of remaining items -->

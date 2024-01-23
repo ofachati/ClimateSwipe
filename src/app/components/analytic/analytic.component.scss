@@ -1,3 +1,40 @@
 .container {
     margin: 20px;
   }
+
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Adjust as needed
+  }
+  
+  .title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  mat-grid-tile {
+    padding: 10px;
+  }
+  
+  .black-spinner {
+    color: black;
+  }
