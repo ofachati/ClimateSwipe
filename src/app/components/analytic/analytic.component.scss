@@ -35,6 +35,6 @@
     padding: 10px;
   }
   
-  .black-spinner {
-    color: black;
-  }
+  .spinner-container ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #000000;
+}

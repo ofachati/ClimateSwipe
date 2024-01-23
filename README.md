@@ -2,10 +2,17 @@
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ofachati/nuit_info_front)](https://codeclimate.com/github/ofachati/nuit_info_front/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886)](https://app.codacy.com/gh/ofachati/nuit_info_front/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-# NuitInfoFront
+# Climate Swipe
+
+
+
+Cette application a été créée pour l'événement "Nuit de l'Informatique 2023" par deux étudiants passionnés en Master MIAGE de l'université Paris Nanterre. Dans le cadre du "Projet Système d'Information et Donnée", l'application a été étendue pour intégrer des fonctionnalités d'analyse descriptive et d'apprentissage automatique (machine learning), offrant ainsi une approche plus approfondie et innovante dans le traitement et la visualisation des données environnementales et climatiques.
+Le projet est en open source
+
+lien du demo : www.itwi.me
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
