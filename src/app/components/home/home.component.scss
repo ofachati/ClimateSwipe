@@ -1,15 +1,20 @@
 /* Add this at the top of your CSS file */
-@import url('https://fonts.googleapis.com/css2?family=CoolFont&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .container {
   background-image: url('/assets/pictures/background.avif'); /* Replace with your actual image path */
   background-size: cover;
   background-color: black;
   background-repeat: no-repeat;
-  font-family: 'CoolFont', sans-serif; /* Replace 'CoolFont' with your chosen font */
   min-height: 100vh ;
 }
 
 .section h1 {
   color: white; /* Or any color that contrasts well with your background */
+  -webkit-text-stroke: 0.2px rgb(0, 0, 0);
+  font-family: 'Pacifico', sans-serif; /* Replace 'CoolFont' with your chosen font */
+
 }
+/*.section {
+  font-family: ;
+}*/

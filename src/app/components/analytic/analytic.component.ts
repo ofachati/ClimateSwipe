@@ -4,6 +4,7 @@ import { EmissionsData } from 'src/app/models/EmissionsData.model';
 import { DataService } from 'src/app/services/data.service';
 
 
+
 @Component({
   selector: 'app-analytic',
   templateUrl: './analytic.component.html',
@@ -12,14 +13,19 @@ import { DataService } from 'src/app/services/data.service';
 
 
 export class AnalyticComponent implements OnInit {
+
+
+
+
   isLoading = true;
- // view: [number, number] = [700, 300]; // Chart dimensions
- countryEmmisionByYear!: any[]; // This will hold the formatted data for the chart
- topEmittingCountries!: any[];
- advancedPiechartData!: any[];
- lineChartCo2TempData!: any[];
- bubbleChartData!: any[];
- emissionsProfileData!: any[];
+  // view: [number, number] = [700, 300]; // Chart dimensions
+  countryEmmisionByYear!: any[]; // This will hold the formatted data for the chart
+  topEmittingCountries!: any[];
+  advancedPiechartData!: any[];
+  lineChartCo2TempData!: any[];
+  bubbleChartData!: any[];
+  emissionsProfileData!: any[];
+
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
