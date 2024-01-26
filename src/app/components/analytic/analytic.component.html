@@ -1,64 +1,66 @@
 <div *ngIf="isLoading" class="spinner-container">
-    <mat-spinner class="uploader-status"></mat-spinner>
-  </div>
+  <mat-spinner class="uploader-status"></mat-spinner>
+</div>
 
 <div class="container" *ngIf="!isLoading">
-    <!-- Spinner -->
+  <!-- Spinner -->
 
 <br><br><br><br>
 
-<H1 class="title">Climat en Chiffres</H1><br>
-<p>Bienvenue sur notre page dédiée aux statistiques climatiques, un espace conçu pour éclairer les débats actuels sur le changement climatique à l'aide de données empiriques. Nous exploitons la vaste base de données de <a href="https://github.com/owid/co2-data" target="_blank" style="color: #007bff;text-decoration: none; font-weight: bold;">Our World in Data</a>, une ressource complète et régulièrement mise à jour qui compile des indicateurs clés sur les émissions de CO2 et autres gaz à effet de serre. Cette collection de métriques essentielles inclut des données annuelles, par habitant, cumulatives et basées sur la consommation de CO2, les autres gaz à effet de serre, le mix énergétique, et d'autres variables pertinentes. 
-    La fiabilité de nos visualisations s'appuie sur l'exhaustivité et la précision de cette base de données, qui allie des informations provenant de diverses sources reconnues telles que l'Energy Institute (EI), l'U.S. Energy Information Administration (EIA) et le Global Carbon Project. 
-    En démystifiant les informations erronées sur le climat, notre objectif est de fournir un aperçu fiable et actualisé de l'impact humain sur notre planète, et d'offrir un outil précieux pour ceux qui cherchent à comprendre et à agir face aux défis environnementaux.
-</p>
+<H1 class="title">Le Climat en quelques statistiques</H1><br>
+<p>Après avoir trié le vrai du faux dans notre rubrique interactive "Swipe",continuez votre découverte avec notre section dédiée aux statistiques climatiques. Armés des données fiables de <a href="https://github.com/owid/co2-data" target="_blank" style="color: #007bff;text-decoration: none; font-weight: bold;">Our World in Data</a>, nous vous offrons un panorama des impacts humains sur notre planète. Ces chiffres, validés par des autorités de référence, dénouent les idées fausses et mettent à jour la réalité climatique.
+Nos données, loin de n'être qu'une collection de nombres, sont le fruit d'une synthèse d'informations rigoureusement validées par des instances de renom telles que l'Energy Institute, l'U.S. Energy Information Administration et le Global Carbon Project. En démêlant les fils des idées reçues, nous vous offrons une vision authentique et actualisée.
+</p><br>
+<p>Immergez-vous dans nos visualisations interactives et progressez vers une compréhension approfondie des enjeux écologiques actuels. Chaque graphique est une clé pour devenir un acteur avisé, prêt à contribuer aux initiatives de préservation de notre planète. Ce parcours à travers nos données est une étape cruciale vers un engagement durable. Lancez-vous dans cet apprentissage dès à présent et faites partie du changement.  </p><br>
 <mat-grid-list cols="2" rowHeight="250px">
 
 <mat-grid-tile rowspan="2">
 <div>
 <h3>Émissions Globales de CO2 en Fonction de la Population</h3>
 <ngx-charts-line-chart
-  [view]="[700, 400]"
-  [results]="countryEmmisionByYear"
-  [showXAxisLabel]="true"
-  [showYAxisLabel]="true"
-  [xAxis]="true"
-  [yAxis]="true"
-  [xAxisLabel]="'population'"
-  [yAxisLabel]="'Emissions de CO2'"
-  [timeline]="true"
-  [animations]="true">
+[view]="[700, 400]"
+[results]="countryEmmisionByYear"
+[showXAxisLabel]="true"
+[showYAxisLabel]="true"
+[xAxis]="true"
+[yAxis]="true"
+[xAxisLabel]="'population'"
+[yAxisLabel]="'Emissions de CO2'"
+[timeline]="true"
+[animations]="true">
 </ngx-charts-line-chart>
 </div>
 </mat-grid-tile>
 
 
 <mat-grid-tile rowspan="2">
-    <div>
-    <h3>Corrélation entre Émissions et changement de Température</h3>
-    <ngx-charts-line-chart
-      [view]="[700, 400]"
-      [results]="lineChartCo2TempData"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="true"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      [xAxisLabel]="'Année'"
-      [yAxisLabel]="'Valeur normalisée'"
-      [timeline]="true"
-      [animations]="true">
-    </ngx-charts-line-chart>
-    </div>
-    </mat-grid-tile>
-    
-    <mat-grid-tile colspan="2" rowspan="1">
-        <div>
-        <p>Dans la première visualisation nous observons une courbe ascendante démontrant l'augmentation des émissions de CO2 en corrélation avec la croissance démographique mondiale. Cette représentation graphique vient contester l'idée reçue que l'augmentation des émissions est uniquement due à l'industrialisation, en mettant en lumière l'influence significative de la population sur l'empreinte carbone.
-        </p><p>La deuxième visualisation met en parallèle l'accroissement des émissions de CO2 et les changment de température sur une échelle de temps. Ce graphique normalisé permet d'observer les tendances sans être influencé par les échelles différentes, offrant une perspective claire sur la manière dont ces deux phénomènes évoluent proportionnellement, La superposition des deux courbes révèle comment l'augmentation des émissions de CO2 s'accompagne souvent d'une hausse des températures, mettant en évidence le lien étroit entre activités humaines et changement climatique. Ce graphique déconstruit le mythe selon lequel les changements de température sont un phénomène naturel et non lié aux actions humaines, en exposant la synchronisation remarquable entre les deux tendances.
-        </p>
-    </div>  
-    </mat-grid-tile>
+  <div>
+  <h3>Corrélation entre Émissions et changement de Température</h3>
+  <ngx-charts-line-chart
+    [view]="[700, 400]"
+    [results]="lineChartCo2TempData"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="'Année'"
+    [yAxisLabel]="'Valeur normalisée'"
+    [timeline]="true"
+    [animations]="true">
+  </ngx-charts-line-chart>
+  </div>
+  </mat-grid-tile>
+  
+  <mat-grid-tile colspan="2" rowspan="1">
+      <div>
+      <p>• Notre première visualisation montre que l'augmentation des émissions de CO2, liée à la croissance démographique, est accentuée par l'industrialisation rapide, l'expansion des transports et l'adoption de technologies énergivores, surtout après que la population mondiale a dépassé 2 milliards. Ces facteurs ont fortement contribué à l'augmentation des gaz à effet de serre.
+      </p><p>• La rareté des données historiques autour de 1750 dans notre deuxième visualisation reflète un contexte pré-industriel avec des technologies et des méthodes de mesure limitées, expliquant ainsi les faibles émissions de CO2 de cette époque. Cette situation met en lumière l'impact significatif de l'industrialisation et de la croissance démographique sur l'environnement dans les siècles suivants.
+
+        La visualisation révèle aussi l'évolution parallèle des émissions de CO2 et des changements de température, soulignant le lien entre activités humaines et changement climatique. On note une hausse des émissions dans les années 1930, période d'intense industrialisation, et une chute en 2020 due aux confinements de la pandémie de COVID-19, illustrant l'effet des comportements humains et des politiques sur les émissions de gaz à effet de serre.
+      </p><br><br/>
+  </div>  
+  </mat-grid-tile>
 
 <mat-grid-tile rowspan="2">
 <div>
@@ -71,49 +73,52 @@
 [legend]="true"
 [showXAxisLabel]="true"
 [showYAxisLabel]="true"
-[xAxisLabel]="'Région'"
+[xAxisLabel]="'Pays'"
 [yAxisLabel]="'Émissions (millions de tonnes)'"
-  >
-  
+>
+
 </ngx-charts-bar-vertical>
 
 </div>
 </mat-grid-tile >
 <mat-grid-tile rowspan="2">
-    <p>Ce graphique à barre, révèle la quantité de CO2 émise par différentes régions et pays. Il met en lumière la répartition inégale des émissions, défiant ainsi la croyance répandue que les émissions sont uniformément réparties à travers le monde. En effet, des acteurs économiques majeurs tels que l'Asie et les pays à revenu élevé figurent en tête, ce qui invite à une réflexion sur les responsabilités différenciées dans la lutte contre le changement climatique.
-
-    </p>
+  <p>• Le diagramme détaille les émissions de CO2 en distinguant l'Asie totale, ajustée selon le Global Carbon Project, et sans la Chine, soulignant l'influence majeure de la Chine sur le continent. L'Europe et l'Union européenne sont également comparées, montrant des émissions plus faibles pour l'UE, probablement dues à une politique climatique plus rigoureuse. L'Asie dépasse les 15 000 millions de tonnes d'émissions, la Chine contribuant à près de 10 000 millions, tandis que l'Europe émet environ 5 000 millions et l'Inde plus de 2 000 millions, révélant les différents niveaux de dépendance aux énergies fossiles et les progrès en matière de politiques environnementales. Cette représentation aide à identifier les cibles clés pour des actions de réduction des émissions.</p>
+  <span style="border: 1px solid black; padding: 10px;">
+    <br><strong>La séparation permet d'analyser l'impact des régions et de comprendre comment les collaborations régionales comme l'Union européenne influencent les émissions. L'Asie GCP fournit des données normalisées pour la recherche climatique, tandis que l'exclusion de la Chine de l'Asie permet de voir l'impact des autres pays asiatiques. Cela aide à identifier les principaux acteurs des émissions et à élaborer des politiques ciblées pour la réduction des émissions, essentielle pour les initiatives climatiques mondiales.</strong><br/>
+  </span>
 </mat-grid-tile>
 
 <mat-grid-tile rowspan="2">
-    <p>Ce graphique à bulle confronte l'intensité des émissions, mesurée en CO2 émis par unité de PIB, à la richesse économique des pays. Cette représentation éclaire la notion erronée que la prospérité économique est synonyme d'une grande empreinte carbone. Des pays à fort PIB par habitant présentent parfois une faible intensité d'émissions, ce qui illustre leur efficacité économique en matière de production de CO2. Cette visualisation offre une perspective nuancée, montrant que développement économique et durabilité environnementale peuvent coexister.</p>
-</mat-grid-tile>
+<p>• Dans ce graphique à bulles, le Qatar et la Chine occupent des positions opposées, illustrant des intensités d'émissions de CO2 différentes malgré leur croissance économique. Le Qatar, avec un PIB élevé par habitant, a une faible intensité d'émissions, suggérant une efficacité économique supérieure. En revanche, la Chine présente une intensité élevée, reflétant sa dépendance aux combustibles fossiles. Les États-Unis se situent entre ces deux extrêmes, avec une intensité d'émissions modérée. Les pays comme la France et l'Allemagne, proches les uns des autres dans le graphique, indiquent une gestion uniforme des émissions par unité de PIB. Ce graphique montre que la prospérité économique ne rime pas nécessairement avec une forte empreinte carbone, soulignant la complexité des dynamiques économiques et environnementales.</p>
+<span style="border: 1px solid black; padding: 10px;">
+  <br><strong>Dans le graphique, chaque bulle symbolise un pays. En survolant une bulle, vous verrez le nom du pays, son PIB par habitant et ses émissions de CO2, offrant un aperçu rapide de sa situation économique et environnementale.</strong><br/>
+</span></mat-grid-tile>
 <mat-grid-tile rowspan="2">
-    <div>
-    <h3>Intensité des Émissions par PIB et par Pays</h3>
-    <ngx-charts-bubble-chart
-      [view]="[700, 400]"
-      [results]="bubbleChartData"
-      [xAxis]="true"
-      [yAxis]="true"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      [xAxisLabel]="'PIB par habitant'"
-      [yAxisLabel]="'Émissions CO2'"
-      [tooltipDisabled]="false">
-    </ngx-charts-bubble-chart>
-    </div>
-    </mat-grid-tile>
-   
+  <div>
+  <h3>Intensité des Émissions par PIB et par Pays</h3>
+  <ngx-charts-bubble-chart
+    [view]="[700, 400]"
+    [results]="bubbleChartData"
+    [xAxis]="true"
+    [yAxis]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxisLabel]="'PIB par habitant'"
+    [yAxisLabel]="'Émissions CO2'"
+    [tooltipDisabled]="false">
+  </ngx-charts-bubble-chart>
+  </div>
+  </mat-grid-tile>
+ 
 
 <mat-grid-tile rowspan="1" colspan="2">
 <div>
-<h3>Contribution des Secteurs aux Émissions de CO2</h3>
+<h3>Contribution des différentes Sources aux Émissions de CO2</h3>
 <ngx-charts-advanced-pie-chart
-  [view]="[1000, 200]"
-  [results]="advancedPiechartData"
-  [gradient]="true"
- >
+[view]="[1000, 200]"
+[results]="advancedPiechartData"
+[gradient]="true"
+>
 </ngx-charts-advanced-pie-chart>
 </div>
 </mat-grid-tile>
@@ -121,33 +126,41 @@
 
 
 <mat-grid-tile rowspan="2"><div>
-<h3>Profil des Émissions de CO2 par Source pour Certains Pays</h3>
+<h3>Émissions de CO2 par Source pour Certains Pays</h3>
 <ngx-charts-polar-chart
-  [view]="[700, 400]"
-  [results]="emissionsProfileData"
-  [legend]="true"
-  [legendTitle]="'Pays'"
-  [showXAxisLabel]="true"
+[view]="[700, 400]"
+[results]="emissionsProfileData"
+[legend]="true"
+[legendTitle]="'Pays'"
+[showXAxisLabel]="true"
 [showYAxisLabel]="true"
-[xAxisLabel]="'source d émission'"
-[yAxisLabel]="'Valeur d émission'"
+[xAxisLabel]="'source d\'émission'"
+[yAxisLabel]="'Valeur d\'émission'"
 [xAxis]="true"
-  [yAxis]="true"
+[yAxis]="true"
 
-  >
+>
 </ngx-charts-polar-chart>
 </div>
 </mat-grid-tile>
 
 <mat-grid-tile rowspan="2">
-    <div>
+  <div>
 
-        <p>le camembert en haut démystifie l'idée fausse selon laquelle seuls les secteurs industriels contribuent de manière significative aux émissions de CO2. En effet, il révèle l'impact considérable d'autres sources telles que l'énergie charbonnière, le gaz, le pétrole et les changements d'affectation des terres. Ce graphique souligne que la lutte contre les émissions de gaz à effet de serre nécessite une approche multisectorielle et nuancée.</p>
-        <br>
-        <p>La représentation en radar, ou "Profil des Émissions de CO2 par Source pour Certains Pays", illustre la distribution variée des émissions entre différentes sources pour une sélection de pays. Cette vue comparative déconstruit la notion que tous les pays contribuent aux émissions de CO2 de la même manière, mettant en évidence des profils d'émissions distincts qui reflètent la diversité des stratégies énergétiques et industrielles nationales.</p>
+      <p>• Notre diagramme en camembert montre que le charbon et le pétrole sont les plus grands émetteurs de CO2, avec 36% et 28% des émissions totales. Cette dominance s'explique par leur usage étendu dans la production d'énergie, l'industrie et les transports. Cependant, leur part diminue progressivement en raison de la transition vers des énergies plus propres, de l'amélioration de l'efficacité énergétique, et des politiques visant à réduire la dépendance aux combustibles fossiles. Le gaz naturel, bien qu'une alternative moins polluante, contribue aussi significativement aux émissions. D'autres secteurs comme le ciment et le changement d'affectation des terres jouent également un rôle notable. Ce diagramme met en évidence la nécessité de se concentrer sur les principaux secteurs pour réduire les émissions globales.</p>
+      <br>
+      <p>• La large dominance des États-Unis dans ce dernier diagramme, en termes d'émissions de CO2 s'explique par leur vaste économie et industrie, une consommation d'énergie élevée par habitant, et une forte utilisation de véhicules et d'avions. Leur production d'énergie repose encore largement sur les combustibles fossiles, et les politiques climatiques passées étaient moins restrictives que celles d'autres pays, menant à des émissions plus importantes.</p>
 
-    </div>
+  </div>
 </mat-grid-tile>
 
+
+
 </mat-grid-list>
+
+<h3>Synthése</h3>
+
+<p>Notre analyse révèle que la France se distingue parmi les principaux pays industrialisés européens en matière de durabilité environnementale. Elle affiche de faibles émissions de CO2 par unité de PIB, illustrant une performance environnementale supérieure à celle de ses voisins européens. Cette efficacité découle d'une combinaison de politiques environnementales rigoureuses, d'une forte utilisation de l'énergie nucléaire, d'une conscience climatique élevée parmi la population, d'investissements dans les technologies vertes, d'un rôle actif dans les accords climatiques internationaux et d'une culture valorisant la préservation de l'environnement. Ces facteurs positionnent la France comme un leader en matière de durabilité au sein de l'Europe industrialisée.
+  </p><br>
+
 </div>

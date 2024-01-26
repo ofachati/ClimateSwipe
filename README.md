@@ -1,8 +1,5 @@
 # ClimateSwipe
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/ofachati/ClimateSwipe)
-<img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/ofachati/ClimateSwipe">
-<a href="https://www.codacy.com/gh/ofachati/ClimateSwipe/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ofachati/ClimateSwipe&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/a4e163d604aa457b8374bec4c79e0d44"/></a>
 [![CircleCI](https://img.shields.io/circleci/build/github/ofachati/ClimateSwipe/main)](https://dl.circleci.com/status-badge/redirect/gh/ofachati/nuit_info_front/tree/main)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ofachati/nuit_info_front)](https://codeclimate.com/github/ofachati/nuit_info_front/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886)](https://app.codacy.com/gh/ofachati/nuit_info_front/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
@@ -37,8 +34,8 @@ L'interface intuitive de ClimateSwipe rend l'apprentissage sur le changement cli
 
 - ![Angular][angular.js]
 - ![FastAPI][fastapi.js]
-- ![MongoDB][mongodb.com]
-- ![Heroku][heroku.com]
+- [![MongoDB](https://www.mongodb.com)](https://www.mongodb.com)
+- [![Heroku](https://www.heroku.com)](https://www.heroku.com)
 
 ## Manuel d'installation et d'utilisation
 
@@ -62,11 +59,6 @@ uvicorn main:app --reload
 
 Cela lancera le frontend Angular sur `http://localhost:4200/` et le backend FastAPI sur `http://localhost:8000/`.
 
-## Auteurs
-
-- [Omar EL FACHATI](https://github.com/ofachati)
-- [Mohamed KONATE](https://github.com/MohamedKonate)
-
 ## Contributions
 
 Les contributions sont essentielles dans la communauté open source. Nous apprécions grandement toutes les suggestions et contributions.
@@ -82,6 +74,13 @@ Pour contribuer :
 ## License
 
 Distribué sous la licence [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0). Voir le fichier LICENSE pour plus d'informations.
+
+
+## Auteurs
+
+- [Omar EL FACHATI](https://github.com/ofachati)
+- [Mohamed KONATE](https://github.com/MohamedKonate)
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
