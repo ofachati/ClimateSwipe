@@ -26,7 +26,7 @@ export class FooterComponent {
 
   DeveloperMode() {
     this.clickCount++;
-    if (this.clickCount === 7) {
+    if (this.clickCount === 700000) {
       this.showDeveloperModeSnackBar();
       this.clickCount = 0; // Reset the count after opening the dialog
     }

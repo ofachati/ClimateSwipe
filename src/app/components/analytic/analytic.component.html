@@ -3,7 +3,7 @@
 </div>
 
 <div class="container" *ngIf="!isLoading">
-  <!-- Spinner -->
+<!-- Spinner -->
 
 <br><br><br><br>
 
@@ -82,17 +82,28 @@ Nos données, loin de n'être qu'une collection de nombres, sont le fruit d'une 
 </div>
 </mat-grid-tile >
 <mat-grid-tile rowspan="2">
-  <p>• Le diagramme détaille les émissions de CO2 en distinguant l'Asie totale, ajustée selon le Global Carbon Project, et sans la Chine, soulignant l'influence majeure de la Chine sur le continent. L'Europe et l'Union européenne sont également comparées, montrant des émissions plus faibles pour l'UE, probablement dues à une politique climatique plus rigoureuse. L'Asie dépasse les 15 000 millions de tonnes d'émissions, la Chine contribuant à près de 10 000 millions, tandis que l'Europe émet environ 5 000 millions et l'Inde plus de 2 000 millions, révélant les différents niveaux de dépendance aux énergies fossiles et les progrès en matière de politiques environnementales. Cette représentation aide à identifier les cibles clés pour des actions de réduction des émissions.</p>
-  <span style="border: 1px solid black; padding: 10px;">
-    <br><strong>La séparation permet d'analyser l'impact des régions et de comprendre comment les collaborations régionales comme l'Union européenne influencent les émissions. L'Asie GCP fournit des données normalisées pour la recherche climatique, tandis que l'exclusion de la Chine de l'Asie permet de voir l'impact des autres pays asiatiques. Cela aide à identifier les principaux acteurs des émissions et à élaborer des politiques ciblées pour la réduction des émissions, essentielle pour les initiatives climatiques mondiales.</strong><br/>
-  </span>
+  <div>
+  <p> Le diagramme détaille les émissions de CO2 en distinguant l'Asie totale, ajustée selon le Global Carbon Project, et sans la Chine, soulignant l'influence majeure de la Chine sur le continent. L'Europe et l'Union européenne sont également comparées, montrant des émissions plus faibles pour l'UE, probablement dues à une politique climatique plus rigoureuse. L'Asie dépasse les 15 000 millions de tonnes d'émissions, la Chine contribuant à près de 10 000 millions, tandis que l'Europe émet environ 5 000 millions et l'Inde plus de 2 000 millions, révélant les différents niveaux de dépendance aux énergies fossiles et les progrès en matière de politiques environnementales. Cette représentation aide à identifier les cibles clés pour des actions de réduction des émissions.</p>
+  <mat-card >
+    <mat-card-content>
+      <strong>La séparation permet d'analyser l'impact des régions et de comprendre comment les collaborations régionales comme l'Union européenne influencent les émissions. L'Asie GCP fournit des données normalisées pour la recherche climatique, tandis que l'exclusion de la Chine de l'Asie permet de voir l'impact des autres pays asiatiques. Cela aide à identifier les principaux acteurs des émissions et à élaborer des politiques ciblées pour la réduction des émissions, essentielle pour les initiatives climatiques mondiales.</strong>
+    </mat-card-content>
+  </mat-card>
+</div>
 </mat-grid-tile>
 
 <mat-grid-tile rowspan="2">
+  <div>
 <p>• Dans ce graphique à bulles, le Qatar et la Chine occupent des positions opposées, illustrant des intensités d'émissions de CO2 différentes malgré leur croissance économique. Le Qatar, avec un PIB élevé par habitant, a une faible intensité d'émissions, suggérant une efficacité économique supérieure. En revanche, la Chine présente une intensité élevée, reflétant sa dépendance aux combustibles fossiles. Les États-Unis se situent entre ces deux extrêmes, avec une intensité d'émissions modérée. Les pays comme la France et l'Allemagne, proches les uns des autres dans le graphique, indiquent une gestion uniforme des émissions par unité de PIB. Ce graphique montre que la prospérité économique ne rime pas nécessairement avec une forte empreinte carbone, soulignant la complexité des dynamiques économiques et environnementales.</p>
-<span style="border: 1px solid black; padding: 10px;">
-  <br><strong>Dans le graphique, chaque bulle symbolise un pays. En survolant une bulle, vous verrez le nom du pays, son PIB par habitant et ses émissions de CO2, offrant un aperçu rapide de sa situation économique et environnementale.</strong><br/>
-</span></mat-grid-tile>
+
+<mat-card >
+  <mat-card-content>
+    <strong>Dans le graphique, chaque bulle symbolise un pays. En survolant une bulle, vous verrez le nom du pays, son PIB par habitant et ses émissions de CO2, offrant un aperçu rapide de sa situation économique et environnementale.</strong>
+  </mat-card-content>
+</mat-card>
+</div>
+</mat-grid-tile>
+
 <mat-grid-tile rowspan="2">
   <div>
   <h3>Intensité des Émissions par PIB et par Pays</h3>
@@ -154,9 +165,38 @@ Nos données, loin de n'être qu'une collection de nombres, sont le fruit d'une 
   </div>
 </mat-grid-tile>
 
+<mat-grid-tile rowspan="2">
+  <div>
+  <p> Ce graphique en boîte à moustaches illustre la variabilité des émissions de CO2 pour cinq grands pays européens : France, Espagne, Royaume-Uni, Allemagne et Portugal. Chaque "boîte" représente la distribution interquartile des émissions annuelles de CO2, mettant en lumière la médiane (ligne centrale de la boîte), la dispersion (hauteur de la boîte) et les valeurs extrêmes (extrémités des "moustaches"), sur une période donnée. Cette visualisation met en évidence la variabilité et la stabilité des politiques environnementales et de la consommation énergétique au sein de ces nations. Par exemple, l'étendue des moustaches pour l'Allemagne suggère une grande variabilité annuelle, possiblement due à des changements significatifs dans les pratiques industrielles ou les politiques énergétiques. À l'inverse, le Portugal présente une variabilité faible, indiquant une certaine constance dans ses émissions au fil des ans. Cette analyse révèle non seulement l'ampleur des émissions de chaque pays, mais aussi les dynamiques et tendances uniques qui caractérisent leur contribution au changement climatique.</p>
+
+</div>
+</mat-grid-tile>
+
+<mat-grid-tile rowspan="2">
+
+  <div>
+    <h3>Variabilité des Émissions des Principaux Pays Européens</h3>
+    <ngx-charts-box-chart
+  [view]="[700, 300]"
+  [results]="boxPlotData"
+  [strokeColor]="'#000000'"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxisLabel]="'Pays Européens'"
+  [yAxisLabel]="'Émissions CO2 (milliers de tonnes)'"
+>
+</ngx-charts-box-chart>
+
+    </div>
+  
+</mat-grid-tile>
+
+
+
 
 
 </mat-grid-list>
+
 
 <h3>Synthése</h3>
 

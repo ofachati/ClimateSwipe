@@ -25,6 +25,8 @@ export class AnalyticComponent implements OnInit {
   lineChartCo2TempData!: any[];
   bubbleChartData!: any[];
   emissionsProfileData!: any[];
+  boxPlotData: any[] = [];
+
 
   constructor(private dataService: DataService) {}
 
@@ -45,7 +47,12 @@ export class AnalyticComponent implements OnInit {
 this.bubbleChartData = this.dataService.getEmissionsIntensityData();
 //polar chart
 this.emissionsProfileData = this.dataService.getEmissionsProfileBySourceForYear(2022);
-
+//box plot
+// Now fetch the box plot data
+this.dataService.getEmissionsDataForBoxPlot().subscribe(boxData => {
+  this.boxPlotData = boxData;
+  console.log('Box Plot Data:', this.boxPlotData);
+});
 
 this.isLoading = false; // Set loading to false once data is fetched
 }, error => {
@@ -54,6 +61,7 @@ this.isLoading = false; // Set loading to false once data is fetched
 });
     
   }
+
 
 
 }

@@ -4,7 +4,7 @@ import { EmissionsData } from '../models/EmissionsData.model';
 import { EmissionRegion } from '../models/EmissionRegion.model';
 import { EmissionRecord } from '../models/EmissionRecord.model';
 import { Observable, of } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -240,8 +240,78 @@ getEmissionsProfileBySourceForYear(year: number): any[] {
   return emissionsProfile;
 }
 
+// Add a new method to get the emissions data for the box plot
+getEmissionsDataForBoxPlot(): Observable<any[]> {
+  return this.fetchEmissionsData().pipe(
+    map(emissionsData => {
+      // Define the European countries of interest
+      const countries = ['France', 'Spain', 'United Kingdom', 'Germany', 'Portugal'];
+      
+      // Initialize an array to hold the emissions data for the box plot
+      const boxPlotData: any[] = [];
 
+      // Iterate over each country and extract the relevant emissions data
+      countries.forEach(country => {
+        const countryEmissions = emissionsData[country]?.data.map(d => d.co2).filter(v => v != null);
+        if (countryEmissions && countryEmissions.length > 0) {
+          // Calculate statistics for box plot
+          const median = this.calculateMedian(countryEmissions);
+          const lowerQuartile = this.calculatePercentile(countryEmissions, 25);
+          const upperQuartile = this.calculatePercentile(countryEmissions, 75);
+          const min = Math.min(...countryEmissions);
+          const max = Math.max(...countryEmissions);
 
+          // Add the country's emissions data to the array
+          boxPlotData.push({
+            name: country,
+            series: [{
+              name: 'Lower Quartile',
+              value: lowerQuartile
+            }, {
+              name: 'Median',
+              value: median
+            }, {
+              name: 'Upper Quartile',
+              value: upperQuartile
+            }, {
+              name: 'Min',
+              value: min
+            }, {
+              name: 'Max',
+              value: max
+            }]
+          });
+        }
+      });
+
+      return boxPlotData;
+    }),
+    catchError(this.handleError<any[]>('getEmissionsDataForBoxPlot', []))
+  );
+}
+
+// Helper function to calculate the median of an array
+private calculateMedian(values: number[]): number {
+  if (values.length === 0) return 0;
+  values.sort((a, b) => a - b);
+  const half = Math.floor(values.length / 2);
+  if (values.length % 2) {
+    return values[half];
+  }
+  return (values[half - 1] + values[half]) / 2.0;
+}
+
+// Helper function to calculate a percentile
+private calculatePercentile(values: number[], percentile: number): number {
+  if (values.length === 0) return 0;
+  values.sort((a, b) => a - b);
+  const index = (percentile / 100) * (values.length - 1);
+  const lower = Math.floor(index);
+  const upper = lower + 1;
+  const weight = index % 1;
+  if (upper >= values.length) return values[lower];
+  return values[lower] * (1 - weight) + values[upper] * weight;
+}
 private handleError<T>(operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
     console.error(`${operation} failed: ${error.message}`);
