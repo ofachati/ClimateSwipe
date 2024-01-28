@@ -1,14 +1,13 @@
 # ClimateSwipe
 
-[![CircleCI](https://img.shields.io/circleci/build/github/ofachati/ClimateSwipe/main)](https://dl.circleci.com/status-badge/redirect/gh/ofachati/nuit_info_front/tree/main)
-[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ofachati/nuit_info_front)](https://codeclimate.com/github/ofachati/nuit_info_front/maintainability)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886)](https://app.codacy.com/gh/ofachati/nuit_info_front/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![CircleCI](https://img.shields.io/circleci/build/github/ofachati/ClimateSwipe/main)](https://dl.circleci.com/status-badge/redirect/gh/ofachati/ClimateSwipe/tree/main)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ofachati/ClimateSwipe)](https://codeclimate.com/github/ofachati/ClimateSwipe/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886)](https://app.codacy.com/gh/ofachati/ClimateSwipe/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![logo-no-background](https://github.com/ofachati/ClimateSwipe/assets/67542830/30906c7e-157c-4389-a739-72966e796469)
 
-**ClimateSwipe**, l'application innovante pour une prise de conscience ludique du changement climatique.
+**ClimateSwipe**, l'application innovante pour une 
+prise de conscience ludique du changement climatique.
 
-## Notre Équipe
-
-Notre équipe est composée de Mohamed et Omar, deux étudiants en Master 2 de l’Université de Paris Nanterre. Ensemble, nous avons conçu ClimateSwipe et son logo, ajoutant une touche personnelle à notre projet.
 
 ## À propos de ClimateSwipe
 
@@ -45,13 +44,13 @@ Suivez ces étapes pour lancer l'application :
 
 2. Installez [nodeJS](https://nodejs.org/fr/download/current/) et [Angular CLI](https://angular.io/cli).
 
-3. Rendez-vous dans le dossier `branches/climateswipe-frontend`, exécutez les commandes suivantes :
+3. exécutez les commandes suivantes :
 
 npm install
 ng serve
 
 
-4. Pour le backend, allez dans `branches/climateswipe-backend` :
+4. Pour le backend, coloner le projet Backend [projet Backend](https://github.com/ofachati/nuit_info_back) :
 
 pip install -r requirements.txt
 uvicorn main:app --reload
@@ -77,7 +76,6 @@ Distribué sous la licence [Apache 2.0](https://www.apache.org/licenses/LICENSE-
 
 
 ## Auteurs
-
 - [Omar EL FACHATI](https://github.com/ofachati)
 - [Mohamed KONATE](https://github.com/MohamedKonate)
 

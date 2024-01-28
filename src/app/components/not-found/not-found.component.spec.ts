@@ -18,4 +18,9 @@ describe('NotFoundComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  //generat tests
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  
 });
