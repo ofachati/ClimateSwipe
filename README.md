@@ -21,16 +21,6 @@ ClimateSwipe est une plateforme interactive visant à éduquer de façon ludique
 
 ClimateSwipe offre une expérience de "swiping" engageante pour apprendre sur le changement climatique. Des réponses instantanées rendent l'apprentissage divertissant.
 
-### TL;DR
-
-Utilisant Angular pour le front-end et FastAPI pour le back-end, ClimateSwipe assure une expérience utilisateur fluide et intuitive.
-
-## Caractéristiques Principales
-
-### Interface Conviviale
-
-L'interface intuitive de ClimateSwipe rend l'apprentissage sur le changement climatique accessible à tous.
-
 ## Construit avec
 
 - ![Angular][angular.js]
