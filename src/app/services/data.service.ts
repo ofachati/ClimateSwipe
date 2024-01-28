@@ -245,7 +245,7 @@ getEmissionsDataForBoxPlot(): Observable<any[]> {
   return this.fetchEmissionsData().pipe(
     map(emissionsData => {
       // Define the European countries of interest
-      const countries = ['France', 'Spain', 'United Kingdom', 'Germany', 'Portugal'];
+      const countries = ['France', 'Spain', 'United Kingdom', 'Germany', 'Portugal','Poland', 'Italy'];
       
       // Initialize an array to hold the emissions data for the box plot
       const boxPlotData: any[] = [];
