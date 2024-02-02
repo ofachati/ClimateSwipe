@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
 import { Assumption } from 'src/app/models/assumption.model';
-import assumptions from 'src/assets/users.json';
+import assumptions from 'src/assets/datasets/assumptions.json';
 
 
 @Component({

@@ -32,6 +32,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { AiComponent } from './components/ai/ai.component';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     TetrisComponent,
     TinderCardComponent,
     AnalyticComponent,
-    AiComponent
+    AiComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NgxChartsModule,
     MatSelectModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
