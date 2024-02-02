@@ -43,6 +43,7 @@ export class ChatbotComponent {
     this.scrollToBottom();
     this.chatService.sendMessage(sentMessage).subscribe((response: any) => {
       this.loading = false;
+      console.log(response);
       this.messages.push({
         type: 'client',
         message: response.message,
