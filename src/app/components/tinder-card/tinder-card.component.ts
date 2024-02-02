@@ -44,16 +44,23 @@ export class TinderCardComponent {
   
 
   swipeLeft() {
+    this.swipeState = 'left'; // Déclenche l'animation vers la gauche
     this.openDialog(this.cardData.isReal === false);
     this.next.emit();
-
+    
+    // Réinitialisez l'état après que l'animation soit terminée
+    setTimeout(() => this.swipeState = '', 400); // Assurez-vous que ce délai correspond à la durée de l'animation
   }
-
+  
   swipeRight() {
+    this.swipeState = 'right'; // Déclenche l'animation vers la droite
     this.openDialog(this.cardData.isReal === true);
     this.next.emit();
-
+    
+    // Réinitialisez l'état après que l'animation soit terminée
+    setTimeout(() => this.swipeState = '', 400); // Assurez-vous que ce délai correspond à la durée de l'animation
   }
+  
 
   showResponse(userChoice: boolean) {
     // Compare userChoice with cardData.isReal and show response accordingly
