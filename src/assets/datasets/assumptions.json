@@ -1,27 +1,27 @@
 [
   {
-    "title": "Les voitures électriques",
+    "title": "Voitures électriques",
     "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, bien que la production des batteries des voitures électriques ait un impact environnemental, les véhicules électriques ont généralement une empreinte carbone inférieure sur l'ensemble de leur cycle de vie par rapport aux voitures à essence, surtout si l'électricité provient de sources renouvelables.",
     "isReal": true,
     "assumption": "La production des batteries des voitures électriques a un impact, mais sur l'ensemble de leur cycle de vie, les voitures électriques ont une empreinte carbone globalement inférieure."
   },
   {
-    "title": "Les énergies renouvelables",
+    "title": "Energies renouvelables",
     "image": "https://images.unsplash.com/photo-1548337138-e87d889cc369?q=80&w=2992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "Au contraire, les énergies renouvelables, telles que l'énergie solaire et éolienne, deviennent de plus en plus compétitives et peuvent jouer un rôle essentiel dans la satisfaction des besoins mondiaux en électricité. Les progrès technologiques les rendent plus efficaces et économiquement viables.",
     "isReal": true,
     "assumption": "Les énergies renouvelables, en particulier le solaire et l'éolien, sont de plus en plus compétitives et peuvent répondre à une partie significative de la demande mondiale d'électricité."
   },
   {
-    "title": "Le changement climatique ",
+    "title": "Changement climatique ",
     "image": "https://images.unsplash.com/photo-1615092296061-e2ccfeb2f3d6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le changement climatique se mesure sur des périodes à long terme, en examinant les tendances globales. Les variations météorologiques à court terme ne remettent pas en cause la réalité du changement climatique, qui est étayée par des données scientifiques et des modèles climatiques.",
     "isReal": false,
     "assumption": "Le changement climatique se mesure sur des périodes à court terme, et les variations météorologiques à long terme ne le nient pas."
   },
   {
-    "title": "Le changement climatique #2.",
+    "title": "Changement climatique",
     "image": "https://images.unsplash.com/photo-1536088728536-533c2f3d4bbd?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "Au contraire, les activités humaines, en particulier les émissions de gaz à effet de serre, jouent un rôle significatif dans le changement climatique actuel. Il existe un large consensus scientifique sur le fait que l'activité humaine contribue de manière substantielle au réchauffement de la planète.",
     "isReal": false,
@@ -35,14 +35,14 @@
     "assumption": "Bien que planter des arbres soit bénéfique, une approche intégrée est essentielle pour lutter contre le changement climatique."
   },
   {
-    "title": "La capture et le stockage du carbone (CSC)",
+    "title": "Capture et Stockage du carbone",
     "image": "https://images.unsplash.com/photo-1554769945-af468c934022?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "Bien que la CSC puisse aider à atténuer le changement climatique, elle ne remplace pas la nécessité fondamentale de réduire les émissions. De plus, la CSC présente des risques environnementaux et doit être complémentaire à d'autres actions plutôt qu'une solution unique.",
     "isReal": false,
     "assumption": "La CSC peut atténuer le changement climatique, em plus de remplacer la réduction des émissions, sans forcement présenter des risques environnementaux."
   },
   {
-    "title": "La neutralité carbone ",
+    "title": "Neutralité carbone ",
     "image": "https://images.unsplash.com/photo-1580064461598-505b080a8242?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le chemin vers la neutralité carbone peut varier considérablement en fonction des contextes géographiques, économiques et sociaux. La transition nécessite des approches flexibles et adaptées, tout en respectant les principes de durabilité, et il n'existe pas de modèle unique.",
     "isReal": false,
@@ -50,7 +50,7 @@
   },
 
   {
-    "title": "Le réchauffement climatique",
+    "title": "Réchauffement climatique",
     "image": "https://images.unsplash.com/photo-1592945376100-dc03004111b2?q=80&w=2880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le réchauffement climatique a des conséquences visibles à l'échelle mondiale, affectant les écosystèmes, les phénomènes météorologiques et la biodiversité. Comprendre ces impacts est crucial pour prendre des mesures d'atténuation et d'adaptation.",
     "isReal": true,
@@ -58,7 +58,7 @@
   },
 
   {
-    "title": "La biodiversité ",
+    "title": "Biodiversité ",
     "image": "https://images.unsplash.com/photo-1627215750463-3386c8ed92ee?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le changement climatique contribue à la perte de biodiversité, et vice versa. Comprendre cette interrelation est essentiel pour mettre en œuvre des stratégies intégrées visant à préserver à la fois le climat et la diversité biologique.",
     "isReal": true,
@@ -66,7 +66,7 @@
   },
 
   {
-    "title": "L'énergie nucléaire",
+    "title": "Energie nucléaire",
     "image": "https://images.unsplash.com/photo-1591200834528-4050ce99fe78?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le rôle de l'énergie nucléaire dans la transition vers la neutralité carbone est débattu. Bien que l'énergie nucléaire n'émette pas de gaz à effet de serre pendant son fonctionnement, elle pose des défis tels que la gestion des déchets radioactifs et les risques liés aux accidents nucléaires. D'autres solutions, telles que les énergies renouvelables, doivent également être envisagées pour un avenir énergétique durable.",
     "isReal": true,
@@ -74,7 +74,7 @@
   },
   
   {
-    "title": "Les efforts individuels pour réduire l'empreinte carbone",
+    "title": "Efforts individuels pour réduire l'empreinte carbone",
     "image": "https://images.unsplash.com/photo-1635695604201-2b718204bccb?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, les actions individuelles pour réduire l'empreinte carbone sont importantes et contribuent à une prise de conscience collective. L'effet cumulatif de milliards de petites actions peut avoir un impact significatif sur la réduction des émissions de gaz à effet de serre et la promotion de modes de vie durables.",
     "isReal": false,

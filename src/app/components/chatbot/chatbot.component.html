@@ -9,8 +9,8 @@
       
     <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
       <div id="helpdesk-popup-header">
-        <b>🤖 Eko </b> <span style=" font-size: 10px;">🟢</span>
-        <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
+        <b>🤖 Eko </b> <span style=" font-size: 10px; user-select: none;" matTooltipPosition="above" matTooltip="en ligne" >🟢</span>
+        <button id="helpdesk-popup-close-button" (click)="openSupportPopup()" matTooltipPosition="above" matTooltip="Fermer">
         ❌
         </button>
     
@@ -52,7 +52,7 @@
       <form id="helpdesk-popup-footer" [formGroup]="chatForm" class="chat-form">
         <mat-form-field class="chat-input-field" appearance="fill">
           <input matInput formControlName="message" placeholder="Tapez votre message ici...">
-          <button mat-mini-fab color="primary" class="send-button" [disabled]="!chatForm.valid" (click)="sendMessage()">
+          <button mat-mini-fab color="primary" class="send-button" [disabled]="!chatForm.valid" (click)="sendMessage()" matTooltipPosition="above" matTooltip="Envoyer">
             <mat-icon>send</mat-icon>
           </button>
         </mat-form-field>
