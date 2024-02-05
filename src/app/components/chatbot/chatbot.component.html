@@ -2,14 +2,14 @@
     <!--<button id="helpdesk-popup-button" (click)="openSupportPopup()">
       Need Help?
     </button>-->
-    <button mat-fab color="accent" aria-label="Bot" (click)="openSupportPopup()" matTooltip="Eko bot 🤖">
+    <button mat-fab color="accent" aria-label="Bot" (click)="openSupportPopup()" matTooltip="🤖 Eko Bot">
         <mat-icon>android</mat-icon>
       </button>
       
       
     <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
       <div id="helpdesk-popup-header">
-        Eko 🤖
+        <b>🤖 Eko </b> <span style=" font-size: 10px;">🟢</span>
         <button id="helpdesk-popup-close-button" (click)="openSupportPopup()">
         ❌
         </button>
@@ -51,7 +51,7 @@
 
       <form id="helpdesk-popup-footer" [formGroup]="chatForm" class="chat-form">
         <mat-form-field class="chat-input-field" appearance="fill">
-          <input matInput formControlName="message" placeholder="Type your message here...">
+          <input matInput formControlName="message" placeholder="Tapez votre message ici...">
           <button mat-mini-fab color="primary" class="send-button" [disabled]="!chatForm.valid" (click)="sendMessage()">
             <mat-icon>send</mat-icon>
           </button>
