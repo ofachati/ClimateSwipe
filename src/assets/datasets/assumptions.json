@@ -14,7 +14,7 @@
     "assumption": "Les énergies renouvelables, en particulier le solaire et l'éolien, sont de plus en plus compétitives et peuvent répondre à une partie significative de la demande mondiale d'électricité."
   },
   {
-    "title": "Changement climatique ",
+    "title": "Changement climatique",
     "image": "https://images.unsplash.com/photo-1615092296061-e2ccfeb2f3d6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le changement climatique se mesure sur des périodes à long terme, en examinant les tendances globales. Les variations météorologiques à court terme ne remettent pas en cause la réalité du changement climatique, qui est étayée par des données scientifiques et des modèles climatiques.",
     "isReal": false,
@@ -42,7 +42,7 @@
     "assumption": "La CSC peut atténuer le changement climatique, em plus de remplacer la réduction des émissions, sans forcement présenter des risques environnementaux."
   },
   {
-    "title": "Neutralité carbone ",
+    "title": "Neutralité carbone",
     "image": "https://images.unsplash.com/photo-1580064461598-505b080a8242?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le chemin vers la neutralité carbone peut varier considérablement en fonction des contextes géographiques, économiques et sociaux. La transition nécessite des approches flexibles et adaptées, tout en respectant les principes de durabilité, et il n'existe pas de modèle unique.",
     "isReal": false,
@@ -58,7 +58,7 @@
   },
 
   {
-    "title": "Biodiversité ",
+    "title": "Biodiversité",
     "image": "https://images.unsplash.com/photo-1627215750463-3386c8ed92ee?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "response": "En réalité, le changement climatique contribue à la perte de biodiversité, et vice versa. Comprendre cette interrelation est essentiel pour mettre en œuvre des stratégies intégrées visant à préserver à la fois le climat et la diversité biologique.",
     "isReal": true,

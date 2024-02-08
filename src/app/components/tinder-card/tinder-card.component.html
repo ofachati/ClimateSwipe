@@ -8,13 +8,13 @@
         <p style="margin-top: 40px;">{{ cardData.assumption }}</p>
       </mat-card-content>
       <mat-card-actions style="display: flex; justify-content: space-between; padding: 30px;">
-        <button mat-fab color="warn" (click)="swipeLeft()" style="font-size: 68px; width: 88px; height: 88px !important;">
+        <button mat-fab color="warn" (click)="swipeLeft()" style="font-size: 68px; width: 88px; height: 88px !important;" matTooltipPosition="above" matTooltip="👈">
           <mat-icon class="custom-icon">close</mat-icon>
         </button>
-        <button mat-fab color="primary" (click)="swipeRight()" style="font-size: 68px; width: 88px; height: 88px !important;">
+        <button mat-fab color="primary" (click)="swipeRight()" style="font-size: 68px; width: 88px; height: 88px !important;" matTooltipPosition="above" matTooltip="👉">
           <mat-icon class="custom-icon">favorite</mat-icon>
         </button>
       </mat-card-actions>
     </mat-card>
-  </div>
+</div>
   
