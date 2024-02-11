@@ -26,7 +26,7 @@ export class ChatbotComponent {
   constructor(private chatService: ChatService) {
     this.messages.push({
       type: 'client',
-      message: "Bonjour, je suis Eko bot. Comment puis-je vous aider?",
+      message: "Hello 👋, I'm Eko bot. Feel free to ask me any questions or request information about the climate, and I'll provide you with answers along with the sources!",
     });
   }
 

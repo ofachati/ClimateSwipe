@@ -1,89 +1,94 @@
 <!-- footer.component.html -->
 <div class="footer">
-    <mat-grid-list cols="6" >
+    <mat-grid-list cols="5" >
       <!-- First Section -->
-      <mat-grid-tile  colspan="2">
-        <div class="section">
-          <!--<a href="https://www.buymeacoffee.com/FACHATI" target="_blank"></a>-->
-            <img
-              src="assets/logo-no-background.svg"
-              alt="Team logo"
-              matTooltip="Our Team : ITWI"
-              style="width: 80%; cursor: default;"
-            />
-          
-        </div>
-      </mat-grid-tile>
-  
-      <!-- Second Section -->
-      <mat-grid-tile  colspan="2">
+       <!-- Third Section -->
+       <mat-grid-tile colspan="1">
 
-        <div class="section">
-          <h3>À propos de nous</h3>
-          <br>
-          <p>
-            Cette application a été créée pour l'événement "Nuit de l'Informatique 2023" par deux étudiants en Master MIAGE de l'université Paris Nanterre. Dans le cadre du "Projet Système d'Information et Donnée", l'application a été étendue pour intégrer des fonctionnalités d'analyse statistique descriptive et d'apprentissage automatique , offrant ainsi une approche plus approfondie et innovante dans le traitement et la visualisation des données environnementales et climatiques.
-            <br>Le projet est en open source, voici les liens du <a href="https://github.com/ofachati/ClimateSwipe" target="_blank">frontend</a> et du 
-            <a href="https://github.com/ofachati/ClimateSwipeAPI" target="_blank">backend</a> sur Github.
-            
-            <br><br>
-            <!--
-            Équipe INIT TO WIN IT
+        <!-- <h3>Contactez nous</h3>-->
 
-          </p>
-          <br>
-          <a href="https://www.buymeacoffee.com/FACHATI" target="_blank" target="_blank">Buy us a coffee ☕</a><br>-->
-          <a (click)="onButtonClick()" target="_blank">Terms and conditions</a>
-        </div>
-        
-      </mat-grid-tile>
-  
-      <!-- Third Section -->
-      <mat-grid-tile colspan="1">
+         <!-- First Subsection -->
+         <div class="contact-subsection">
+           <img class="round-picture" src="assets/omar-memogi.png" alt="First Person" matTooltip="Omar" [matTooltipPosition]="'above'" (click)="DeveloperMode()">
 
-         <!-- <h3>Contactez nous</h3>-->
+           <div class="contact-info">
+             <p>Omar EL FACHATI</p>
+             <br>
+             <div class="contact-icons">
+               <button mat-fab class="phone" matTooltip="Phone" onclick="window.open('tel:+33763638534')"> <mat-icon>phone</mat-icon></button>
+               <button mat-fab class="mail" matTooltip="Email" onclick="window.open('mailto:elfachatiomar@gmail.com')"> <mat-icon>mail</mat-icon></button>
+               <button mat-fab class="linkedin" matTooltip="Linkedin" onclick="window.open('//www.linkedin.com/in/fachati', '_blank')" style="color: white; font-size: large;">in</button>
+               <button mat-fab class="github" matTooltip="Github" onclick="window.open('//github.com/ofachati', '_blank')"><mat-icon>code</mat-icon></button>
+             </div>
+         </div>
+     
+   
+       </div>
+     </mat-grid-tile>
+     
+     <mat-grid-tile colspan="1">
 
-          <!-- First Subsection -->
-          <div class="contact-subsection">
-            <img class="round-picture" src="assets/omar-memogi.png" alt="First Person" matTooltip="Omar" [matTooltipPosition]="'above'" (click)="DeveloperMode()">
-
-            <div class="contact-info">
-              <p>Omar EL FACHATI</p>
-              <br>
-              <div class="contact-icons">
-                <button mat-fab class="phone" matTooltip="Phone" onclick="window.open('tel:+33763638534')"> <mat-icon>phone</mat-icon></button>
-                <button mat-fab class="mail" matTooltip="Email" onclick="window.open('mailto:elfachatiomar@gmail.com')"> <mat-icon>mail</mat-icon></button>
-                <button mat-fab class="linkedin" matTooltip="Linkedin" onclick="window.open('//www.linkedin.com/in/fachati', '_blank')" style="color: white; font-size: large;">in</button>
-                <button mat-fab class="github" matTooltip="Github" onclick="window.open('//github.com/ofachati', '_blank')"><mat-icon>code</mat-icon></button>
-              </div>
-          </div>
-      
-    
-        </div>
-      </mat-grid-tile>
-      
-      <mat-grid-tile colspan="1">
-
-         <!-- <h3>Contactez nous</h3>-->
-          <!-- First Subsection -->
-          <!-- Second Subsection -->
-          <div class="round-picture" class="contact-subsection">
-            <img  class="round-picture"  src="assets/mohamed-memogi.png" alt="Second Person" matTooltip="Momo" [matTooltipPosition]="'above'"  (click)="DeveloperMode()">
-            <div class="contact-info">
-              <p>Mohamed KONATE</p>
-              <br>
-              <div class="contact-icons">
-                <!-- Phone -->
+        <!-- <h3>Contactez nous</h3>-->
+         <!-- First Subsection -->
+         <!-- Second Subsection -->
+         <div class="round-picture" class="contact-subsection">
+           <img  class="round-picture"  src="assets/mohamed-memogi.png" alt="Second Person" matTooltip="Momo" [matTooltipPosition]="'above'"  (click)="DeveloperMode()">
+           <div class="contact-info">
+             <p>Mohamed KONATE</p>
+             <br>
+             <div class="contact-icons">
+               <!-- Phone -->
 <button mat-fab class="phone" matTooltip="Phone" onclick="window.open('tel:+33749661636')"><mat-icon>phone</mat-icon></button>
 <button mat-fab class="mail" matTooltip="Email" onclick="window.open('mailto:420015018@parisnanterre.fr')"> <mat-icon>mail</mat-icon></button>
 <button mat-fab class="linkedin" matTooltip="Linkedin" onclick="window.open('//www.linkedin.com/in/your-linkedin-profile', '_blank')" style="color: white; font-size: large;">in</button>
 <button mat-fab class="github" matTooltip="Github" onclick="window.open('//github.com/your-github-profile', '_blank')"><mat-icon>code</mat-icon></button>
 
-              </div>
-            </div>
+             </div>
+           </div>
+         </div>
+     </mat-grid-tile>
+
+  
+      <!-- Second Section -->
+      <mat-grid-tile colspan="2">
+        <div class="section" style="text-align: justify;">
+          <h3>À propos de nous</h3>
+          <br>
+          <p>
+            Cette application a été créée pour l'événement "Nuit de l'Informatique 2023" par deux étudiants en Master MIAGE de l'université Paris Nanterre. Dans le cadre du "Projet Système d'Information et Donnée", l'application a été étendue pour intégrer des fonctionnalités d'analyse statistique descriptive et d'apprentissage automatique , offrant ainsi une approche plus approfondie et innovante dans le traitement et la visualisation des données environnementales et climatiques.
+            <br>Le projet est en open source sur Github. N'hésitez pas à contribuer et à nous faire part de vos retours.
+            <!--
+                  Équipe INIT TO WIN IT
+      
+                </p>
+                <br>
+                <a href="https://www.buymeacoffee.com/FACHATI" target="_blank" target="_blank">Buy us a coffee ☕</a><br>-->
+          </p>
+        </div>
+      </mat-grid-tile>
+  
+     
+
+      <mat-grid-tile  colspan="1">
+        <div class="section">
+          <h3>Liens Utiles</h3>
+          <br>
+          <div class="hyperlinks">
+            <a matTooltip="Swagger Documentation" href="https://strangeback-a040ac93e706.herokuapp.com/docs" target="_blank">Documentation API</a>
+            <a matTooltip="Github Frontend" href="https://github.com/ofachati/ClimateSwipe" target="_blank">Github Frontend</a>
+            <a matTooltip="Github Backend" href="https://github.com/ofachati/ClimateSwipeAPI" target="_blank">Github Backend</a>
+            <a matTooltip="Google drive v0.1 (Partie Data Analytique)" href="https://drive.google.com/drive/folders/1819zplXH5hlBvDC6JM7IaLBj6AreOliP?usp=drive_link" target="_blank">Soutenance v0.1</a>
+            <a matTooltip="Google drive v0.2 (Partie Machine Learning)" href="https://drive.google.com/drive/folders/1m5H02oZe7ZYfzCutk_TAjJ0d_bfZ0bji?usp=drive_link" target="_blank">Soutenance v0.2</a>  
+            <a (click)="onButtonClick()" target="_blank">Terms and conditions</a>
+
           </div>
+        </div>
       </mat-grid-tile>
 
     </mat-grid-list>
+    <div style="text-align: center;">
+      <p>&copy; ClimateSwipe 2024</p>
+    </div>
+
   </div>
   

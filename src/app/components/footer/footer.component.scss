@@ -9,8 +9,22 @@
   
   .section {
     padding: 10px;
+
   }
-  
+  .hyperlinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.hyperlinks a {
+  margin-bottom: 10px; /* Adjust spacing between hyperlinks */
+  color: #007bff; /* Change hyperlink color as needed */
+}
+
+.hyperlinks a:hover {
+  text-decoration: underline; /* Underline hyperlinks on hover */
+}
+
 
 /* Add these styles to your existing styles in footer.component.scss */
 
