@@ -14,6 +14,9 @@ import { ChatService } from 'src/app/services/chat.service';
 export class ChatbotComponent {
   isOpen = false;
   loading = false;
+
+  feedbackProvided = false;
+
   messages: Message[] = [];
   chatForm = new FormGroup({
     message: new FormControl('', [Validators.required]),
@@ -61,4 +64,13 @@ export class ChatbotComponent {
       } catch (err) {}
     }, 150);
   }
+
+  like(message: Message) {
+    message.liked = true;
+  }
+
+  dislike(message: Message) {
+    message.liked = true;
+  }
+  
 }

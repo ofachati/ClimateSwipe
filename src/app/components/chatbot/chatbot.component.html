@@ -20,8 +20,29 @@
           <div *ngFor="let message of messages" class="message">
             <div [class]="message.type" >
             {{ message.message }} 
-             <span *ngIf="message.source_name"><br>Source: <a href="{{ message.source_link }}" target="_blank" style="color: rgb(32, 167, 167);" matTooltipPosition="below" matTooltip="Visiter Wikipedia">{{ message.source_name }}</a></span> 
+             <span *ngIf="message.source_name" style="text-align: left">
+              <br>Source: <a href="{{ message.source_link }}" target="_blank" style="color: rgb(32, 167, 167);" matTooltipPosition="below" matTooltip="Visiter Wikipedia">{{ message.source_name }}</a>
+           
+              <br>
+           
+           <span *ngIf="!message.liked"  style="font-style: italic; color: gray;font-size: x-small; text-align: left">Was this asnwer helpful? 
+          
+            <button (click)="like(message)" matTooltipPosition="below" matTooltip="Like" style="background: none; border: none; padding: 0;">
+              <span style="font-size: 10px;">👍</span>
+            </button>
+            .
+            <button (click)="dislike(message)" matTooltipPosition="below" matTooltip="Dislike" style="background: none; border: none; padding: 0;">
+              <span style="font-size: 10px;">👎</span>
+            </button>
+          
+          
+          </span>
+           <span *ngIf="message.liked" style="font-style: italic; color: gray;font-size: x-small;">Thanks for your feedback!</span>
+           
+
+            </span> 
             </div>
+            
           </div>
           <div
             *ngIf="loading"
