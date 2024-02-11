@@ -18,8 +18,9 @@
       <div id="helpdesk-popup-body">
         <div class="messages" #scrollMe>
           <div *ngFor="let message of messages" class="message">
-            <div [class]="message.type">
-              {{ message.message }}
+            <div [class]="message.type" >
+            {{ message.message }} 
+             <span *ngIf="message.source_name"><br>Source: <a href="{{ message.source_link }}" target="_blank" style="color: rgb(32, 167, 167);" matTooltipPosition="below" matTooltip="Visiter Wikipedia">{{ message.source_name }}</a></span> 
             </div>
           </div>
           <div

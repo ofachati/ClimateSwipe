@@ -1,11 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Message } from 'src/app/models/message.model';
 import { ChatService } from 'src/app/services/chat.service';
 
-export interface Message {
-  type: string;
-  message: string;
-}
+
+
 
 @Component({
   selector: 'app-chatbot',
@@ -47,6 +46,8 @@ export class ChatbotComponent {
       this.messages.push({
         type: 'client',
         message: response.message,
+        source_name: response.source_name,
+        source_link: response.source_link,
       });
       this.scrollToBottom();
     });
