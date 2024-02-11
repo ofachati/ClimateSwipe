@@ -9,8 +9,8 @@
       
     <div id="helpdesk-popup" [style.display]="isOpen ? 'block' : 'none'">
       <div id="helpdesk-popup-header">
-        <b>🤖 Eko </b> <span style=" font-size: 10px; user-select: none;" matTooltipPosition="above" matTooltip="en ligne" >🟢</span>
-        <button id="helpdesk-popup-close-button" (click)="openSupportPopup()" matTooltipPosition="above" matTooltip="Fermer">
+        <span style="user-select: none; margin-right: 5px;">🤖</span><b>Eko</b> <span style=" font-size: 10px; user-select: none; margin-left: 5px;" matTooltipPosition="above" matTooltip="en ligne" >🟢</span>
+        <button id="helpdesk-popup-close-button" (click)="openSupportPopup()" matTooltipPosition="above" matTooltip="Fermer" style="user-select: none;">
         ❌
         </button>
     
@@ -25,19 +25,17 @@
            
               <br>
            
-           <span *ngIf="!message.liked"  style="font-style: italic; color: gray;font-size: x-small; text-align: left">Was this asnwer helpful? 
+           <span *ngIf="!message.liked"  style="font-style: italic; color: gray;font-size: x-small; text-align: left ;user-select: none;">Was this asnwer helpful? 
           
-            <button (click)="like(message)" matTooltipPosition="below" matTooltip="Like" style="background: none; border: none; padding: 0;">
+            <button (click)="like(message)" matTooltipPosition="below" matTooltip="Yes" style="background: none; border: none; padding: 0; cursor: pointer; ">
               <span style="font-size: 10px;">👍</span>
             </button>
             .
-            <button (click)="dislike(message)" matTooltipPosition="below" matTooltip="Dislike" style="background: none; border: none; padding: 0;">
+            <button (click)="dislike(message)" matTooltipPosition="below" matTooltip="No" style="background: none; border: none; padding: 0; cursor: pointer; ">
               <span style="font-size: 10px;">👎</span>
-            </button>
-          
-          
+            </button> 
           </span>
-           <span *ngIf="message.liked" style="font-style: italic; color: gray;font-size: x-small;">Thanks for your feedback!</span>
+           <span *ngIf="message.liked" style="font-style: italic; color: gray;font-size: x-small; user-select: none;">Thanks for your feedback!</span>
            
 
             </span> 
