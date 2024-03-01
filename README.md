@@ -1,11 +1,14 @@
 # ClimateSwipe
-
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/ofachati/ClimateSwipe)
 <img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/ofachati/ClimateSwipe">
 [![CircleCI](https://img.shields.io/circleci/build/github/ofachati/ClimateSwipe/main)](https://dl.circleci.com/status-badge/redirect/gh/ofachati/ClimateSwipe/tree/main)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ofachati/ClimateSwipe)](https://codeclimate.com/github/ofachati/ClimateSwipe/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886)](https://app.codacy.com/gh/ofachati/ClimateSwipe/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![GitHub License](https://img.shields.io/github/license/ofachati/climateswipe)
 ![logo-no-background](https://github.com/ofachati/ClimateSwipe/assets/67542830/30906c7e-157c-4389-a739-72966e796469)
+
+
+
 
 **ClimateSwipe**, l'application innovante pour une 
 prise de conscience ludique du changement climatique.
