@@ -46,7 +46,7 @@ npm install
 ng serve
 
 
-4. Pour le backend, coloner le projet Backend [projet Backend](https://github.com/ofachati/ClimateSwipeAPI) :
+4. Pour le backend, coloner le [projet Backend](https://github.com/ofachati/ClimateSwipeAPI) :
 
 pip install -r requirements.txt
 uvicorn main:app --reload
