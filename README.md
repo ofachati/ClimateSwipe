@@ -26,10 +26,11 @@ ClimateSwipe offre une expérience de "swiping" engageante pour apprendre sur le
 
 ## Construit avec
 
-- ![Angular][angular.js]
-- ![FastAPI][fastapi.js]
-- [![MongoDB](https://www.mongodb.com)](https://www.mongodb.com)
-- [![Heroku](https://www.heroku.com)](https://www.heroku.com)
+- ![Angular][angular.js] ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)  ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+- ![FastAPI][fastapi.js] ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+- ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+- ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+- ![CircleCI](https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white)
 
 ## Manuel d'installation et d'utilisation
 
