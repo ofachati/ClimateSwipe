@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# ClimateSwipe
+# 
 
 **ClimateSwipe**, l'application innovante pour une prise de conscience ludique du changement climatique.
 
