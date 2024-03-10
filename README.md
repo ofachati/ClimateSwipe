@@ -1,20 +1,17 @@
 ![logo-no-background](https://github.com/ofachati/ClimateSwipe/assets/67542830/30906c7e-157c-4389-a739-72966e796469)
 # <p align="center">ClimateSwipe</p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/v/release/ofachati/ClimateSwipe">
-  <img src="https://img.shields.io/github/v/tag/ofachati/ClimateSwipe">
-  <a href="https://dl.circleci.com/status-badge/redirect/gh/ofachati/ClimateSwipe/tree/main">
-    <img src="https://img.shields.io/circleci/build/github/ofachati/ClimateSwipe/main">
-  </a>
-  <a href="https://codeclimate.com/github/ofachati/ClimateSwipe/maintainability">
-    <img src="https://img.shields.io/codeclimate/maintainability/ofachati/ClimateSwipe">
-  </a>
-  <a href="https://app.codacy.com/gh/ofachati/ClimateSwipe/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade">
-    <img src="https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886">
-  </a>
-  <img src="https://img.shields.io/github/license/ofachati/climateswipe">
-</p>
+
+<div align="center">
+
+  <a href="https://github.com/ofachati/ClimateSwipe/releases/latest">![GitHub release (latest by date)](https://img.shields.io/github/v/release/ofachati/ClimateSwipe)</a>
+  <a href="https://github.com/ofachati/ClimateSwipe/tags">![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ofachati/ClimateSwipe)</a>
+  <a href="https://dl.circleci.com/status-badge/redirect/gh/ofachati/ClimateSwipe/tree/main">![CircleCI](https://img.shields.io/circleci/build/github/ofachati/ClimateSwipe/main)</a>
+  <a href="https://codeclimate.com/github/ofachati/ClimateSwipe/maintainability">![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/ofachati/ClimateSwipe)</a>
+  <a href="https://app.codacy.com/gh/ofachati/ClimateSwipe/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade">![Codacy Badge](https://app.codacy.com/project/badge/Grade/d87436632bff4f2ab2bb25c95c763886)</a>
+  <a href="https://github.com/ofachati/ClimateSwipe/blob/main/LICENSE">![GitHub License](https://img.shields.io/github/license/ofachati/climateswipe)</a>
+
+</div>
 
 
 **ClimateSwipe**, l'application innovante pour une 
